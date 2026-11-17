@@ -1,343 +1,529 @@
 www.lawcommission.gov.np
-Nepal Citizenship Act 2063 (2006)
-Date of Authentication and publication
-10 Mangsir, 2063 (26 Nov., 2006)
-1. Amended by some Nepalese Acts Amendment Act ,2064 2064.5.9
-Act No. 25 of the Year 2063 (i.e. 2006)
-
-An Act Made to Amend and Consolidate Laws Relating to Citizenship
-Preamble: Whereas the sovereignty and state authority is vested on the Nepalese people as the
-result of the popular movement;
-
-Whereas, as per the commitment mentioned in ‘Declaration of the House of
-Representatives 2063 (2006) that Nepalese citizenship were facing difficulties in acquiring
-citizenship certificate in the past and based on the political understanding made on 22 kartik
-2063 (Nov 8th 2006),
-
-Whereas, it is expedient to amend and consolidate the laws relating to citizenship
-regarding acquisition termination and other necessary provisions,
-
-Now, therefore, be it enacted by the House of Representatives in the First Year of the
-Proclamation of the House of Representatives, 2063 (2006).
-
-1. Short Title and Commencement: (1) This Act may be called "Nepal Citizenship Act
-
-2063 (2006)".
-
-(2) This Act shall come into force immediately.
-2. Definition: Unless the subject or context otherwise requires, in this Act:
-
-(a) "Minor" means a person who has not attained the age of 16 years.
-
-(b) "Person" means natural person.
-
-(c) "Prescribed" or " as Prescribed" means prescribed or as prescribed in the Rules
-
-made under this Act.
-3. Acquisition of Nepali Citizenship by Descent: (1) A person born at the time when
-his/her father or mother is a citizen of Nepal, shall be a citizen of Nepal by descent.
-(2) Notwithstanding anything contained in sub-section (1), in case of a child
-
-born to a Nepali citizen woman married to a foreign citizen, sub-section (2) of Section 5
-
-shall apply.
-
-1
+नेपाल नागरिकता ऐन, २०६३
+प्रमाणीकरण र प्रकाशन मिति
+२०६२ ।०८। १०
+संशोधन गर्ने ऐन
+१. केही नेपाल ऐनलाई संशोधन गर्ने ऐन, २०६४ २०६४।०५। ०९
+२. केही नेपाल ऐनलाई संशोधन गर्ने ऐन, २०७२ २०७२।११।१३
+३. नेपाल नागरिकता (पहिलो संशोधन) ऐन, २०७९ २०८०।०२।१७
+४. नेपाल नागरिकता (दोस्रो संशोधन) ऐन, २०८२ २०८२।०६॥०५
+२०६३ सालको ऐन न. २५
+नागरिकता सम्बन्धी नेपाल कानूनलाई संशोधन र एकीकरण गर्न बनेको ऐन
+प्रस्तावनाः ऐतिहासिक जनआन्दोलनको परिणाम स्वरुप नेपालको सार्वभौमसत्ता नेपाली जनतामा
+निहित रहेको र राज्यशक्तिको स्रोत नेपाली जनता नै रहेको विद्यमान अवस्थामा विगतमा नेपाली
+नागरिकहरुले नागरिकताको प्रमाणपत्र प्राप्त गर्न नसक्दा अप्ठेरो परिरहेको अवस्थालाई महसूस
+गरी प्रतिनिधिसभाको घोषणा, २०६३ ले नेपाल राज्यभित्रको नागरिकता सम्बन्धी समस्याको
+समाधान यथाशीघ्र गर्ने सङ्कल्प लिए अनुरुप २०६३ साल कार्तिक २२ गते भएको राजनीतिक
+सहमतिको आधारमा नेपालको नागरिकता प्राप्ति, समाप्ति र तत्सम्बन्धी अन्य कुराको व्यवस्था
+गर्नका लागि प्रचलित कानूनी व्यवस्थालाई समयानुकूल संशोधन र एकीकरण गर्न वाञ्छनीय
+भएकोले,
+प्रतिनिधिसभाको घोषणा, २०६३ जारी भएको पहिलो वर्षमा प्रतिनिधिसभाले यो ऐन
+बनाएको छ।
+१. संक्षिप्त नाम र प्रारम्भ: (१) यस ऐनको नाम “नेपाल नागरिकता ऐन, २०६३” रहेको
+gl
+(२) यो ऐन तुरुन्त प्रारम्भ हुनेछ।
+२. परिभाषा : विषय वा प्रसङ्गले अर्को अर्थ नलागेमा यस ऐनमा,-
+(क) “नाबालक” भन्नाले सोह्र वर्ष उमेर पूरा नभएको व्यक्ति सम्झनु पर्छ।
+(ख) “व्यक्ति” भन्नाले प्राकृतिक व्यक्ति सम्झनु पर्छ।
+(ग) “तोकिएको” वा “तोकिए बमोजिम” भन्नाले यो ऐन अन्तर्गत बनेको
+नियममा तोकिएको वा तोकिए बमोजिम सम्झनु पर्छ।
+१
 www.lawcommission.gov.np
 
-(3) Every child found in the territory of Nepal, whose paternity and maternity is
-not known shall, until the father or mother of the child is traced, be deemed a citizen of
-Nepal by descent.
+३. वंशजको नाताले नेपाली नागरिकता प्राप्ति : (१) कुनै व्यक्तिको जन्म हुँदा निजका बाबु
 
-4. Acquisition of Nepali Citizenship by Birth: (1) Any person born before 2046 Chaitra
-31, Bikram Sambat (i.e. 13, April, 1990 A.D.) within the territory of Nepal and having
-domiciled permanently in Nepal shall be deemed a citizen of Nepal by birth.
+वा आमा नेपालको नागरिक रहेछ भने त्यस्तो व्यक्ति वंशजको नाताले नेपालको नागरिक
+हुनेछ।
 
-(2) A person desiring to obtain citizenship certificate pursuant to Sub-section
-(1) shall have to apply before holding of the election for Constituent Assembly and the
-procedure for granting of the Citizenship Certificate shall be as prescribed.
+(२) उपदफा (१) मा जुनसुकै कुरा लेखिएको भए तापनि विदेशी नागरिकसँग
+विवाह गर्ने नेपाली नागरिक महिलाबाट जन्मिएका सन्तानको हकमा दफा ५ को उपदफा
+(२) बमोजिम हुनेछ।
 
-(3) ११ ९४५९ a person, due to certain reasons, could not submit his application
-within the period specified in sub-section (1) may apply as prescribed within two years
-from the commencement of this Act.
+(३) नेपालभित्र फेला परेको पितृत्व र मातृत्वको ठेगान नभएको प्रत्येक
+नाबालक निजको बाबु वा आमाको पत्ता नलागेसम्म वंशजको नाताले नेपालको नागरिक
+मानिनेछ र निजले सोह्र वर्ष उमेर पूरा भएपछि वंशजको आधारमा नेपालको नागरिकता
+लिन सक्नेछ।
 
-5. Acquisition of Citizenship by Naturalization: (1) A foreign women married to a citizen
-of Nepal desiring to obtain citizenship of Nepal shall have to submit an application in
-the prescribed form to the designated officer. On submitting such application, she has to
-produce the marriage relationship document with the citizen of Nepal and also evidence
-to show the initiation of procedure for renunciation of own's foreign citizenship.
+a(¥) संवत्‌ २०७२ साल असोज ३ गतेभन्दा अघि जन्मको आधारमा नेपालको
+नागरिकता प्राप्त गरेको नागरिकको सन्तानले बाबु र आमा दुवै नेपालको नागरिक रहेछन्‌
+भने निजको उमेर सोह्र वर्ष पूरा भएपछि वंशजको आधारमा नेपालको नागरिकता प्राप्त
+गर्नेछ।
 
-(2) २७ child born to a Nepali female citizen from marriage with a foreign
-citizen in Nepal and having permanent domicile in Nepal may be granted naturalized
-citizenship as prescribed, provided the child has not acquired the citizenship of the
-foreign country on the basis of the citizenship of his/her father.
+"(४क) उपदफा (४) मा जुनसुकै कुरा लेखिएको भए तापनि बाबु वा आमा मध्ये
+कुनै एकले जन्मको आधारमा नेपाली नागरिकता प्राप्त गरेको र अर्कोको नेपाली
+नागरिकता प्राप्त गर्नु अगावै मृत्यु भएको वा सम्पर्कविहीन रहेको व्यक्तिको हकमा दफा
+५ को उपदफा (५क) बमोजिम हुनेछ।
 
-(3) A person desiring to acquire naturalized citizenship pursuant to Sub-
-section (2) shall have to submit an application with the following documents to the
-designated authority:
+a(X) नेपालको नागरिक आमाबाट नेपालमा जन्म भई नेपालमा नै बसोबास
+गरेको र बाबुको पहिचान हुन नसकेको व्यक्तिले वंशजको आधारमा नेपालको नागरिकता
+प्राप्त गर्नेछ।
 
-(a) Duplicate copy of the citizenship certificate of the mother,
+"(शक) नेपालको नागरिक आमाबाट नेपालमा जन्म भई नेपालमा नै बसोबास
+गरेको व्यक्तिको बाबु सम्पर्कबिहीन भई बाबुको पहिचान हुन नसकेको वा आमाले बाबु
+यिनै व्यक्ति हुन्‌ भनी पहिचान गराउन नसकेको वा त्यस्तो व्यक्तिको जन्मदर्ता वा शैक्षिक
+योग्यताको प्रमाणपत्र वा अन्य कुनै प्रमाणमा बाबुको नाम उल्लेख भए तापनि बाब्रुको
+पहिचान खुलाउन नसकेको भनी निज र निजको आमाले स्वघोषणा गरेमा त्यस्तो व्यक्तिको
+बाबुको पहिचान हुन नसकेको मानिनेछ र निजले उपदफा (५) बमोजिम वंशजको
+आधारमा नागरिकता प्राप्त गर्नेछ।
 
-(b) Recommendation by concerned Municipality or Village Development
-
-Committee certifying the birth and permanent residency in Nepal,
-
-(c) Evidence to show that foreign citizenship has not been acquired based on
-
-the citizenship of the father.
-
-(4) | The Government of Nepal may grant naturalized citizenship as prescribed
-to those foreign citizens, who have contributed specially for the upliftment of science,
-philosophy, art, literature, world peace, human welfare or Nepalese industry, finance or
-social development and have fulfilled the following conditions or status:
-
-2
-www.lawcommission.gov.np
-(a) who is able to read and write Nepali or any other language in practice in
-Nepal.
-
-(b) _ who is engaged in any occupation and domiciled in Nepal.
-
-(c) who has renounced or declared such renunciation of the citizenship of
-
-the other country.
-
-(0) — who has resided in Nepal for a minimum period of 15 years.
-
-(e) who is a citizen of the country where there is provision of the law or
-
-practice to grant naturalized citizenship to Nepalese.
-
-(f) who bears good moral character
-
-(g) who is mentally fit and healthy.
-
-(5) Whatever may have been written is Sub-section (4), from among the
-issues of the person, the child born to the person prior to that person having acquired
-citizenship by naturalization may also acquire Nepalese citizenship by naturalization as
-prescribed form.
-
-(6) Any person acquiring citizenship by naturalization under this Section
-shall take an oath as mentioned in the schedule and awarded the Nepalese citizen
-certificate in the prescribed form and such person shall be naturalized citizen of Nepal
-from the date of receiving such certificate.
-
-6. Award of Honorary Nepalese Citizenship: Notwithstanding anything mentioned in
-Section 5, the Government of Nepal may award Honorary Nepalese Citizenship to any
-internationally renowned person.
-
-7. Citizenship in the case of accession of territory: When any part of territory is
-integrated with Nepal, persons residing in such acceded territory shall be considered
-citizens of Nepal, from the date Government of Nepal publishes a notification as
-prescribed in the Nepal Gazette.
-
-8. Filing of Application to obtain Citizenship Certificate: (1) A person attaining the age
-of 16 years desiring to acquire citizenship of Nepal by descent pursuant to Section 3,
-shall have to file an application in the prescribed form along with copies of the following
-documents to the designated authority:
-
-(a) Nepalese Citizenship Certificate of descendants of relatives
-within three generations from paternal or maternal or self-side.
-Provided that, this provision shall not be applicable to Nepalese
-female citizen married to a foreigner.
-
-3
+हि पहिलो संशोधनद्वारा संशोधित |
+* पहिलो संशोधनद्धारा थप।
+™ दोस्रो संशोधनद्वारा थप।
+र
 www.lawcommission.gov.np
 
-(b) | Recommendation from the concerned Village Development or
-Municipality certifying the place of birth and relationship.
+a(&) उपदफा (२) मा जुनसुकै कुरा लेखिएको भए तापनि विदेशी नागरिकसँग
+विवाह गरेकी नेपाली महिला नागरिकबाट नेपालमा जन्मिएको व्यक्तिले नेपाली नागरिकता
+लिँदाका बखत निजको आमा र बाबु दुवै नेपाली नागरिक रहेछन्‌ भने नेपालमा जन्मिएको
+त्यस्तो व्यक्तिले वंशजको आधारमा नेपालको नागरिकता प्राप्त गर्नेछ।
 
-(2) A person attaining the age of 16 years desiring to acquire Nepalese
-Citizenship Certificate by virtue of birth pursuant to Section 4 shall have to file an
-application in the prescribed form along with copies of the following documents to the
-designated authority.
+%(७) उपदफा (५) बमोजिम नागरिकता प्राप्त गरेको कुनै व्यक्तिको बाबु बिदेशी
+रहेको ठहरेमा त्यस्तो व्यक्तिले वंशजको आधारमा लिएको नागरिकता कायम रहने छैन र
+निजले बाबुको नागरिकताको आधारमा विदेशी मुलुकको नागरिकता प्राप्त नगरेको भनी
+तोकिए बमोजिम स्वघोषणा गरी वंशजको आधारमा प्राप्त गरेको नागरिकताको प्रमाणपत्र
+बुझाएमा अङ्गिकृत नागरिकता प्राप्त गर्नेछ।
 
-(a) Recommendation from the concerned Village Development
-Committee or Municipality certifying the birth in Nepal and
-residing permanently in Nepal.
+a(S) उपदफा (३) बमोजिम नागरिकता प्राप्त गरेको व्यक्तिको बाबु वा आमा
+पत्ता लागेमा निजले प्राप्त गरेको नागरिकता सम्बन्धमा देहाय बमोजिम गर्नु पर्नेछः-
 
-(b) Anevidence showing Land Ownership Certificate in the name of
-self or family or Certificate of Land Tilling Right or proof of house
-or listing of name or the name of father or mother in the Voters'
-list prepared by the Election Commission.
+(क) यस ऐन बमोजिम वंशजको आधारमा नेपालको नागरिकता प्राप्त हुने
+भएमा सोही बमोजिमको विवरण amas गरी निजको
+नागरिकता कायम गर्ने,
 
-(3) On receipt of the applications pursuant to Sub-section (1) or (2), the
-designated authority shall award the Nepalese Citizenship Certificate, after evaluating
-and based on evidence as produced.
+(ख) यस ऐन बमोजिम नेपालको अङ्गिकृत नागरिकता प्राप्त हुने भएमा
+निजले वंशजको आधारमा प्राप्त गरेको नागरिकता खिची निजलाई
+अङ्गिकृत नागरिकता प्रदान गर्ने।
 
-(4) Inthe circumstance, where a person could not submit the evidences along
-with the application as prescribed in Sub-section (1) and (2), the designated authority
-may award the Nepalese Citizenship Certificate based on the spot investigation and on
-the basis of identification at the time of spot investigation by at least three persons having
-obtained Nepalese Citizenship Certificate and residing in the same Ward and are
-acquainted with the applicant.
+*Y, 2२०२
+५. अङ्गीकृत नेपाली नागरिकता प्राप्ति : (१) नेपाली नागरिकसँग वैवाहिक सम्बन्ध भएकी
+विदेशी महिलाले नेपालको नागरिकता प्राप्त गर्न चाहेमा तोकिएको अधिकारी समक्ष
+तोकिएको ढाँचामा निवेदन दिनु पर्नेछ। त्यसरी निवेदन दिँदा नेपाली नागरिकसँग भएको
+वैवाहिक सम्बन्धको र आपूःले विदेशी नागरिकता त्याग्ने कारबाही चलाएको निस्सा पनि
+साथै पेश गर्नु पर्नेछ।
 
-(5) While conducting the spot investigating in accordance with Sub-section
-(iv), the applicant must have been born in Nepal and stated clearly the fact of having
-lived in a permanent manner.
+(२) विदेशी नागरिकसँग विवाह गरेकी नेपाली नागरिक महिलाबाट जन्मिएका
+छोराछोरीको हकमा १........ नेपालमा स्थायी बसोबास गरेको र बाबुको नागरिकताको
+आधारमा निजले विदेशी मुलुकको नागरिकता लिएको रहेनछ भने निजलाई तोकिए
+बमोजिम अङ्गीकृत नागरिकता प्रदान गर्न सकिनेछ।
 
-(6) On investigation and evaluation pursuant to Sub-section (3) or (4), if any
-applicant is not found have been qualified to be awarded the Nepalese Citizenship
-Certificate, one shall be duly notified of the decision within the prescribed period.
+छि पहिलो संशोधनद्धारा थप।
+२८ पहिलो संशोधनद्धारा खारेज |
+x पहिलो संशोधनद्धारा झिकिएको |
+३
+www.lawcommission.gov.np
 
-9. Authority to issue Citizenship Certificate: The authority to issue Nepalese Citizenship
-Certificate by descent, on the basis of birth or by naturalization, shall be vested on the
-designated authority.
+(3) उपदफा (२) बमोजिम अङ्गीकृत नागरिकता प्राप्त गर्न चाहने व्यक्तिले
+देहायका कागजात संलग्न गरी तोकिएको अधिकारी समक्ष निवेदन दिनु पर्नेछ :-
 
-10. ‘Termination of Nepalese Citizenship (1) Any citizen of Nepal who voluntarily
-acquires the citizenship of any foreign country shall automatically lose the citizenship of
-Nepal.
+(क) आमाको नेपाली नागरिकताको प्रमाणपत्रको प्रतिलिपि,
+
+(ख) नेपालमा १........ स्थायी बसोबास गरेको व्यहोरा खुल्ने सम्बन्धित
+»गाउँपालिका वा नगरपालिकाको सिफारिस,
+
+(ग) बाबुको नागरिकताको आधारमा कुनै विदेशी मुलुकको नागरिकता
+नलिएको भनी शैनेज र निजको आमाले तोकिए बमोजिम गरेको
+स्वघोषणा।
+
+"तर निवेदन दिँदाका बखत आमाको मृत्यु भइसकेकोमा सोको प्रमाण वा होस
+ठेगानमा नरहेकोमा सोही व्यहोरा खुलाई चिकित्सकले प्रमाणित गरेकोमा आमाको
+स्वघोषणा आवश्यक पर्ने छैन।
+
+(४) देहायका शर्त र अवस्था पूरा गरिसकेका विदेशी नागरिकमध्ये विज्ञान,
+दर्शनशास्त्र, कला, साहित्य, विश्वशान्ति, मानव कल्याण वा नेपालको औद्योगिक, आर्थिक वा
+सामाजिक उन्नतिमा विशेष योगदान पुच्याएको वा asa सक्ने भनी मनासिब आधारमा
+नेपाल सरकारले Seal व्यक्तिलाई तोकिए बमोजिम अङ्गीकृत नेपाली नागरिकता
+प्रदान गर्न सकिनेछ :-
+
+(क) नेपाली: वा नेपालमा प्रचलित अन्य कुनै भाषा बोल्न र लेख्न
+जानेको,
+
+(ख) नेपालमा कुनै व्यवसाय गरी बसेको,
+
+(ग) अन्य मुलुकको नागरिकता त्यागेको वा त्याग्ने घोषणा गरेको,
+
+(घ) कम्तीमा पन्ध्र वर्षसम्म नेपालमा बसोबास गरेको,
+
+(ङ) नेपाली नागरिकलाई अङ्गीकृत नागरिकता दिने कानूनी व्यवस्था वा
+प्रचलन भएको मुलुकको नागरिक भएको,
+
+(च) असल चालचलन भएको,
+
+(छ) मानसिक रुपले स्वस्थ भएको |
+
+> केही नेपाल ऐन संशोधन गर्ने ऐन, २०७२ द्वारा संशोधित |
+पि पहिलो संशोधनद्वारा संशोधित |
+6 दोस्रो संशोधनद्वारा संशोधित |
+™ दोस्रो संशोधनद्वारा थप।
+wv
+www.lawcommission.gov.np
+
+(५) उपदफा (४) मा जुनसुकै कुरा लेखिएको भए तापनि अङ्गीकृत नेपाली
+नागरिकता प्राप्त गरेको व्यक्तिको सन्तानमध्ये निजले सो नागरिकता प्राप्त गर्नुभन्दा पहिले
+जन्मेको सन्तानले तोकिए बमोजिम अङ्गीकृत नेपाली नागरिकता प्राप्त गर्न सक्नेछ |
+
+“(श्र्क) दफा ३ को उपदफा (४क) बमोजिमको व्यक्तिले सो बमोजिमको
+स्वघोषणा गरेमा तोकिए बमोजिम अङ्गीकृत नागरिकता प्राप्त गर्न सक्नेछ |
+
+"(श्ख) नेपालको नागरिक आमाबाट विदेशमा जन्म भई नेपालमा स्थायी बसोबास
+गरेको, विदेशको नागरिकता वा राहदानी नलिएको र बाबुको पहिचान नभएको व्यक्ति र
+निजको आमाले तोकिए बमोजिम स्वघोषणा गरेमा अङ्गीकृत नेपाली नागरिकता प्राप्त गर्न
+सक्नेछ।
+
+(६) यस दफा बमोजिम अङ्गीकृत नेपाली नागरिकता पाउने व्यक्तिलाई अनुसूची
+बमोजिमको शपथग्रहण गराई तोकिएको ढाँचामा नेपाली “नागरिकताको प्रमाणपत्र प्रदान
+गरिनेछ र त्यस्तो प्रमाणपत्र पाएको मितिदेखि त्यस्तो व्यक्ति नेपालको अङ्गीकृत नागरिक
+हुनेछ।
+
+६. सम्मानार्थ नेपालको नागरिकता प्रदान गर्न सकिने : दफा ५ मा जुनसुकै कुरा लेखिएको
+भए तापनि नेपाल सरकारले अन्तर्राष्ट्रिय - ख्यातिप्राप्त व्यक्तिलाई सम्मानार्थ नेपालको
+नागरिकता प्रदान गर्न सक्नेछ |
+
+७. क्षेत्र गाभिँदाको नागरिकता : नेपालभित्र गाभिने गरी कुनै क्षेत्र प्राप्त भएमा त्यस
+क्षेत्रभित्रको व्यक्ति यस ऐनको अधीनमा रही नेपाल सरकारले नेपाल राजपत्रमा सूचना
+प्रकाशन गरी तोकिदिए बमोजिम सोही सूचनामा तोकेको मितिदेखि नेपालको नागरिक
+मानिनेछ।
+
+ace, गैर आवासीय नेपाली नागरिकता प्राप्त गर्न सक्ने: (१) विदेशी मुलुकको नागरिकता प्राप्त
+गरी: दक्षिण एशियाली क्षेत्रीय सहयोग सङ्गठनको सदस्य राष्ट्रबाहेकका देशमा बसोबास
+गरेको र साविकमा वंशजको वा जन्मको आधारमा निज वा निजको बाबु वा आमा, बाजे
+वा बज्यै नेपालको नागरिक रही पछि विदेशी मुलुकको नागरिकता प्राप्त गरेको व्यक्तिले
+आर्थिक, सामाजिक तथा सांस्कृतिक अधिकारको उपभोग गर्न पाउने गरी गैर आवासीय
+नेपाली नागरिकता प्राप्त गर्न सक्नेछ।
+
+गो दोस्रो संशोधनद्वारा थप।
+
+क पहिलो संशोधनद्धारा थप।
 
 4
 www.lawcommission.gov.np
 
-(2) 7116 designated authority shall register the notice submitted by a citizen
-of Nepal, who notifies in the prescribed form of renunciation of the Citizenship of Nepal
-and the citizenship of that person shall be terminated from the date such notice has been
-duly registered.
+(२) उपदफा (१) बमोजिम गैर आवासीय नेपाली नागरिकता लिन चाहने व्यक्तिले
+देहायका कागजात संलग्न राखी तोकिएको अधिकारी समक्ष तोकिए बमोजिम निवेदन दिनु
+पर्नेछः-
 
-(3) 901 person who has been divested of Nepalese citizenship pursuant to
-Section 14, shall be deemed to have lost his citizenship from that date.
+(क) निवेदन दिने व्यक्ति वा निजको aa वा आमा, बाजे वा बज्यै
+नेपालको नागरिक रहेको प्रमाण,
 
-(4) If any person who is in a status of acquiring the citizenships of Nepal
-and a foreign country concurrently, such person shall have to choose the citizenship of
-any one country within two years after attaining the age of 16 years. Failure to choose
-the citizenship in this manner shall be deemed for that person to have lost his Nepalese
-citizenship on expiry of that specified period.
+(ख) सम्बन्धित व्यक्तिले साबिकमा नेपालको नागरिकता लिएको भए सो
+नागरिकता त्याग गरेको प्रमाण,
 
-(5) ११ 0956 any question arises as to whether a Nepalese citizen has acquired
-a foreign citizenship or not, the designated authority shall make a decision pursuant to
-the prevailing laws.
+(ग) विदेशी मुलुकको नागरिकता भएको प्रमाण,
 
-11. Re-acquisition of Nepalese Citizenship: Any Citizen of Nepal who has acquired
-foreign citizenship returns to reside in Nepal and submits a notification to the designated
-authority the evidence of renunciation of foreign citizenship shall be reinstated the
-Nepalese citizenship from the date of registering such evidence.
+(घ) दक्षिण एसियाली क्षेत्रीय सहयोग सङ्गठनका सदस्य राष्ट्रबाहेकको
+देशमा बसोबास गरेको प्रमाण,
 
-12. Revocation of Citizenship Certificate: The designated authority shall revoke such
-Citizenship Certificate of any Nepalese citizen, if it is proven that such citizenship had
-been obtained on submission of false documentation.
+(ङ) नेपालको संविधान र कानूनको परिपालना गर्ने प्रतिबद्धतापत्र ।
 
-13. Two Citizenship Certificates not to be acquired: No person shall acquire more than
-one citizenship certificate. Provided that, there shall be no objection to issue another
-citizenship certificate by the concerned office on the basis of change of residency, if
-any person so desires, after due withdrawal of the first issued citizenship certificate.
+(३) साविकमा नेपालको नागरिकता लिई नागरिकताको प्रमाणपत्र फिर्ता
+नबुझाएको व्यक्तिले गैर आवासीय नेपाली नागरिकताको लागि उपदफा (२) बमोजिम
+निवेदन दिँदा निजले पहिले लिएको नेपाली नागरिकताको प्रमाणपत्र समेत पेश गर्नु पर्नेछ।
 
-14. Deprivation from Nepalese Citizenship: (1) The Government of Nepal may issue
-directives to cancel the Nepalese Citizenship Certificate and to divest Nepalese
-citizenship of any foreign person who has been found proven to have fraudulently
-acquired Nepalese citizenship on submission of false documents and declaration.
+(४) उपदफा (२) बमोजिम निवेदन प्राप्त भएपछि तोकिएको अधिकारीले
+आवश्यक सबुद प्रमाण बुझी निजलाई तोकिए बमोजिम गैर आवासीय नेपाली नागरिकता
+दिनेछ।
 
-(2) ४१1४ person whose Nepalese Citizenship has been divested by a directive
-issued by the Government of Nepal in accordance with this section may file an appeal
-to the concerned Appellate Court within thirty-five days.
+(५) उपदफा (४) बमोजिम गैरआवासीय नेपाली नागरिकता प्राप्त गर्ने व्यक्तिलाई
+तोकिए बमोजिम शपथ गराउनु पर्नेछ।
 
-5
+(६) यस दफा बमोजिम गैर आवासीय नेपाली नागरिकता प्राप्त गरेको व्यक्तिले
+gel विवरण दिई त्यस्तो नागरिकता प्राप्त गरेमा वा निजले नेपालको स्वतन्त्रता,
+सार्वभौमसत्ता, भौगोलिक अखण्डता तथा राष्ट्र हित विपरीत कार्य गरेको ठहरेमा नेपाल
+संरकारले त्यस्तो व्यक्तिले प्राप्त गरेको गैर आवासीय नेपाली नागरिकता रद्द गर्नेछ।
+
+८; नागरिकताको प्रमाणपत्र प्राप्तिको लागि निवेदन दिनु पर्ने : (१) दफा ३ बमोजिम वंशजको
+नाताले नेपाली नागरिकताको प्रमाणपत्र लिन चाहने सोह्र वर्ष उमेर पूरा भएको व्यक्तिले
+तोकिएको अधिकारी समक्ष देहायका कागजातका प्रतिलिपि संलग्न राखी निवेदन दिनु
+पर्नेछ I-
+
+(क) बाबु वा आमा वा आफ्नो वंशतर्फका तीन पुस्ताभित्रको नातेदारको नेपाली
+
+नागरिकताको प्रमाणपत्र,
+६
+www.lawcommission.gov.np
+%(क१) नेपालको नागरिक आमाबाट नेपालमा जन्म भई नेपालमा नै बसोबास गरेको
+र बाबुको पहिचान हुन नसकेको व्यक्तिको हकमा निजको बाबुको पहिचान
+हुन नसकेको व्यहोराको निज र निजको आमाले गरेको तोकिए बमोजिमको
+स्वघोषणा,
+तर निवेदन दिँदाका बखत त्यस्तो व्यक्तिको आमाको मृत्यु
+भइसकेको वा होस ठेगानमा नरहेको अवस्थामा सोको प्रमाणसहित
+निवेदकले गरेको स्वघोषणा संलग्न गर्नु पर्नेछ।
+(ख) जन्मस्थान र नाता खुल्ने गरी गाउँपालिका वा नगरपालिकाले गरिदिएको
+सिफारिस |
+क(ग) खण्ड (क) र (ख) मा जुनसुकै कुरा लेखिएको भए तापनि नेपालभित्र
+फेला परेको र पितृत्व र मातृत्व ठेगान नभएको देहायको व्यक्तिको हकमा
+देहायका कागजातः-
+
+(१) बालमन्दिर, अनाथालय जस्ता नेपाल सरकारद्वारा मान्यताप्राम्त
+संस्थामा हुर्केको भए त्यस्तो संस्थाको सिफारिस र सोको आधारमा
+सम्बन्धित_स्थानीय तहले गरेको सिफारिस,
+
+(२) कानूनी संरक्षकद्वारा हुर्काइएको भए त्यस्तो संरक्षकले गरेको
+'सनाखत सहित निजको नागरिकताको प्रमाणपत्र र सम्बन्धित
+स्थानीय तहको सिफारिस,
+
+(३) अन्य तरिकाले हुर्केको भए सम्बन्धित स्थानीय तहको सिफारिस |
+
+५(१क) उपदफा (१) को खण्ड (क) मा जुनसुकै कुरा लेखिएको भए तापनि
+दफा ३ को उपदफा (४) र (६) बमोजिम नागरिकताको प्रमाणपत्र लिन निवेदन दिँदा
+बाबु र आमा दुवैको नेपाली नागरिकताको प्रमाणपत्रको प्रतिलिपि संलग्न गर्नु पर्नेछ।
+(२) १........
+(३) उपदफा (१) yw... बमोजिम निवेदन प्राप्त भएपछि तोकिएको अधिकारीले
+प्राप्त प्रमाणका आधारमा छानबिन गरी निजलाई नेपाली नागरिकताको प्रमाणपत्र दिनेछ।
+x पहिलो संशोधनद्धारा झिकिएको |
+छि पहिलो संशोधनद्धारा थप।
+> केही नेपाल ऐन संशोधन गर्ने ऐन, २०७२ द्वारा aaa |
+७
 www.lawcommission.gov.np
 
-15. Records of Citizenship Certificates to be maintained: The system of maintaining the
-records of Nepalese Citizenship Certificates shall be as prescribed.
+%(३क) उपदफा (१) बमोजिमको प्रमाण पेश हुन नसकेमा तोकिएको अधिकारीले
+परिवारको सदस्यलाई सम्बन्धित कार्यालयमा उपस्थित हुन म्याद जारी गरी झिकाई
+सनाखत गर्न लगाउनु पर्नेछ।
 
-16. Rights. duties and liabilities not to absolve: No citizen of Nepal whose citizenship in
-terminated for any reason, shall not be deemed to have been absolved of the rights,
-duties and liabilities incurred in relation to any act done during the period the person
-was a citizen of Nepal, only by reason of termination of the citizenship.
+स्पष्टीकरण: यस दफाको प्रयोजनको लागि "परिवारको सदस्य" भन्नाले
+बाबु, आमा, पति, पत्नी, हजुरबुबा, हजुरआमा, दाजु, दिदी, काका, काकी, जेठाजु, देवर
+सम्झनु पर्छ।
 
-17. Correction of the Particulars: * (1) Any person desiring to correct his/her caste or age
-for being differently mentioned in the academic certificate to that of the citizenship
-certificate or correct the minor mistakes in the citizenship certificate, shall have to
-provide for an application with necessary evidence to the designated authority.
-Clarification: For the purpose of this section 'minor' mistake means the non substantial
-details the citizenship certificate to mean “Kumari” "Devi" "Bahadur" "Prasad" like
-words being added or not mentioned or difference in 'Aakar or Ikar (specific grammatical
-error in devanagari) or other minor mistake of that type.
+५(४) कुनै व्यक्तिले उपदफा (१) बमोजिमको प्रमाण पेश गर्न नसकेमा वा दफा
+(३क) बमोजिम परिवारको सदस्यबाट सनाखत हुन नसकेमा तोकिएको अधिकारीले
+स्थलगत सरजमिन गरी निवेदकलाई चिन्ने सोही वडामा बसोबास गर्ने कम्तीमा दुई जना
+नेपाली नागरिकताको प्रमाणपत्र लिईसकेको व्यक्ति र सम्बन्धित स्थानीय तहको कम्तीमा
+एक जना पदाधिकारी वा सदस्यले सरजमिनस्थलमा नै गरेको सनाखत र सम्बन्धित वडा
+समितिले गरेको सिफारिसको आधारमा नेपाली नागरिकताको प्रमाणपत्र दिन सक्नेछ।
 
-(2) 7172 designated authority on receipt of the application pursuant to Sub-
-section (1) shall conduct an enquiry with witnesses as necessary and together with
-evidences obtained from such person shall make the due correction and may grant
-another citizenship certificate after withdrawing the citizenship certificate awarded
-previously.
+(५) उपदफा (४) बमोजिम स्थलगत सरजमिन गर्दा निवेदक नेपालमा जन्म भई
+निरन्तर रुपमा स्थायी बसोबास भएको तथ्य स्पष्ट रुपमा उल्लेख भएको हुनु पर्नेछ।
 
-(3) The designated authority on receipt of the application by a married or
-divorced woman for amendment of her family name, address or other particulars, may
-after verifying the necessary facts grant another citizenship certificate with amended
-family name, address or particulars and withdraw the previous citizenship certificate.
+(६) उपदफा (३) वा (४) “बमोजिम छानबिन गर्दा कुनै निवेदक नेपाली
+नागरिकताको प्रमाणपत्र पाउन योग्य नदेखिएमा तोकिएको अवधिभित्र सोही व्यहोराको
+निर्णय गरी निजलाई सोको जानकारी दिनु पर्नेछ।
 
-18. Revision: (1) Notwithstanding anything provided for in this Act, any person who is
-aggrieved by a decree issued by a designated authority in accordance with this Act, may
-file a petition within thirty-five days from the date such decree was issued with the
-Government of Nepal for revision of such decree.
+‘cH. पहिचान सहितको नागरिकता fea: (१) यस ऐन बमोजिम वंशजको आधारमा नेपालको
+नागरिकता प्राप्त गर्ने व्यक्तिलाई आमा वा बाब्रुको थर र ठेगानामध्ये निजले रोजेको थर र
+ठेगाना उल्लेख गरी नागरिकता दिन सकिनेछ।
 
-(2) On receipt of the petition pursuant to Sub-section (1), the Government of
-Nepal may obtain a report from the designated authority issuing the decree and after
-reviewing the report may give its verdict or issue a decree and such verdict or decree
-shall be final.
+"१क) कुनै व्यक्तिले नागरिकताको प्रमाणपत्रमा आमा वा बाबुमध्ये कुनै एकको
+नाम, थर र ठेगाना उल्लेख गर्न नचाहेको भनी निवेदन दिएमा त्यस्तो व्यक्तिलाई दिइने
+नेपाली नागरिकताको प्रमाणपत्रमा निजले उल्लेख गर्न नचाहेको आमा वा बाबुको नाम,
+थर र ठेगाना उल्लेख नगरी दिनु पर्नेछ।
 
-* Amended by some Nepalese Acts Amendment Act ,2064
+(२) उपदफा (१) "र (१क) मा जुनसुकै कुरा लेखिएको भए तापनि
+नागरिकताको अभिलेखमा आमा, बाबु दुवैको नाम र विवरण राख्नु पर्नेछ।
 
-6
+(३) यस ऐन बमोजिम दिइने नेपाली नागरिकताको प्रमाणपत्रमा तोकिए बमोजिम
+लैङ्गिक पहिचान समेत खुलाउनु पर्नेछ।
+
+पि पहिलो संशोधनद्वारा संशोधित |
+न पहिलो संशोधनद्धारा थप।
+™ दोस्रो संशोधनद्वारा AT |
+So
 www.lawcommission.gov.np
-19. Publication of Name list: Every year the names of the persons who have been divested
-of Nepalese Citizenship pursuant to Section 14 shall be published in the Nepal gazette.
-20. Delegation of Authority: (1) The Government of Nepal may delegate the authority
-vested on itself pursuant to this Act to any officer in the Government of Nepal.
-Provided that, the authority to divest from Nepalese Citizenship pursuant to Section 14
-shall not be delegated.
 
-(2) The designated authority authorized to distribute Citizenship Certificates
-pursuant to this Act may delegate the authority vested on him/her to any staff officer.
+९. नागरिकताको प्रमाणपत्र जारी गर्ने अधिकार : वंशजको नाताले १....... वा अङ्गीकृत नेपाली
+नागरिकताको प्रमाणपत्र जारी गर्ने अधिकार तोकिएको अधिकारीलाई हुनेछ।
 
-21. Punishment: (1) Any foreign national who claims to be a Nepalese citizen and acquires
-Nepalese citizenship by giving false representation shall be sentenced to imprisonment
-from one year to five years or fined from fifty thousand rupees to one hundred thousand
-rupees or awarded both penalties. The citizenship acquired by false representation and
-having penalized pursuant to this clause, the citizenship thus acquired shall be
-automatically cancelled.
+१०. नेपाली नागरिकता कायम नरहने : (१) नेपालको कुनै नागरिकले आफूखुशी कुनै विदेशी
+मुलुकको नागरिकता प्राप्त गरेपछि निजको नेपाली नागरिकता कायम रहने छैन।
 
-(2) The person who was involved in the process of verification or
-recommendation in granting citizenship to any foreign national on false particulars shall
-be sentenced to imprisonment from six months to three years or fined from twenty-five
-thousand rupees to fifty thousand rupees or awarded both penalties.
+(२) नेपाली नागरिकले नेपालको नागरिकता त्याग्न तोकिए बमोजिम सूचना
+गरेपछि तोकिएको अधिकारीले त्यस्तो सूचना दर्ता गर्नेछ र त्यसरी दर्ता गरिएको मितिदेखि
+निजको नेपाली नागरिकता कायम रहने छैन।
 
-(3) Any person who assists and begets false or forged Nepalese Citizenship
-Certificate and brings it in use shall be sentenced to imprisonment from one year to five
-years or fined from twenty thousand rupees to one hundred thousand rupees or awarded
-both penalties.
+(३) दफा १४ बमोजिम कुनै व्यक्तिलाई नेपाली नागरिकताबाट हटाइएकोमा
+त्यसरी हटाइएको मितिदेखि त्यस्तो व्यक्तिको नेपाली नागरिकता कायम रहने छैन।
 
-(4) . Any person who alters or makes correction and assists in such undertaking
-on the particulars of the original citizenship certificate shall be sentenced to
-imprisonment up to three months or fined up to ten thousand rupees or awarded both
-penalties.
+(४) कुनै व्यक्तिलाई एकैसाथ नेपालको र विदेशी मुलुकको नागरिकता प्राप्त हुने
+अवस्था भएमा त्यस्तो व्यक्तिले सोह्र वर्ष उमेर पुगेको दुई वर्षभित्र कुनै एक मुलुकको
+नागरिकता रोज्नु पर्नेछ। त्यसरी नागरिकता नरोजेको अवस्थामा सो म्याद नाघेपछि निजको
+नेपाली नागरिकता कायम रहने छैन।
 
-(5) | Any person who furnishes and acquires citizenship certificate on false
-representation pursuant to Section 12 or the converted particulars pursuant to Section 17
-is proven to be false or commits and Section to commit any other offence in violation of
-this Act or the rules enacted under this Act shall be fined up to fifteen thousand Rupees.
+(५) नेपालको नागरिकले विदेशी मुलुकको नागरिकता प्राप्त गरेको छ वा छैन
+भन्ने प्रश्न उठेमा तोकिएको अधिकारीले प्रचलित कानून बमोजिम निर्णय गर्नेछ।
 
-(6) The issuing authority of Nepalese Citizenship Certificate intentionally or
-with mala fide intention in violation of this Act and the Rules enacted under this Act
-issues Citizenship Certificate or makes changes of the particulars in the Citizenship
+११. पुनः नेपाली नागरिकता कायम हुने : कुनै नेपाली नागरिकले विदेशी मुलुकको नागरिकता
+प्राप्त गरेपछि पुनः नेपालमा आई बसोबास गरेको र विदेशी मुलुकको नागरिकता त्यागेको
+निस्सा तोकिएको अधिकारीलाई दिएमा त्यस्तो निस्सा दर्ता भएको मितिदेखि निजको नेपाली
+नागरिकता पुनः कायम हुनेछ।
 
-7
+१२. नागरिकताको प्रमाणपत्र रद्द गर्ने : कुनै नेपाली नागरिकले झुठो विवरण दिई नेपाली
+नागरिकताको - प्रमाणपत्र लिएको प्रमाणित हुन आएमा तोकिएको अधिकारीले त्यस्तो
+नागरिकताको प्रमाणपत्र रद्द गर्नेछ।
+
+१३. दोहोरो नागरिकताको प्रमाणपत्र लिन नहुने : कसैले पनि एकभन्दा बढी नागरिकताको
+प्रमाणपत्र लिन हुँदैन।
+
+तर बसाइँ सरेको आधारमा कुनै व्यक्तिले चाहेमा सम्बन्धित कार्यालयबाट निजले
+पहिले लिएको नागरिकता खिची अर्को नागरिकताको प्रमाणपत्र जारी गर्न बाधा पर्ने छैन।
+
+१४. नेपाली नागरिकताबाट हटाउने : (१) कुनै विदेशी व्यक्तिले झुठो विवरण वा बयान दिई
+नेपाली नागरिक हो भनी झुक्याई नेपाली नागरिकताको प्रमाणपत्र प्राप्त गरेको कुरा
+
+x पहिलो संशोधनद्धारा झिकिएको |
+
+९
 www.lawcommission.gov.np
-Certificate, such authority or employee shall be subjected to departmental action as per
-the prevailing laws.
-(7) The person who undertakes or assists in any offences punishable under
-Sub-sections (1), (2) and (3) shall be awarded half the punishment as mentioned in those
-Sub-sections.
+प्रमाणित हुन आएमा नेपाल सरकारले निजको नेपाली नागरिकताको प्रमाणपत्र cE गरी
+निजलाई नेपाली नागरिकबाट हटाउने आदेश दिनेछ।
 
-22. Appointment of Citizenship Team: (1) If the Government of Nepal deems necessary,
-a Citizenship Certificate Distribution Team may be appointed to distribute Citizenship
-Certificates.
+(२) यस दफा बमोजिम नेपाल सरकारले कुनै व्यक्तिलाई नेपालको नागरिकताबाट
+हटाउने गरी दिएको आदेश उपर पैंतीस दिनभित्र सम्बन्धित ?उच्च अदालतमा पुनरावेदन
+लाग्न सक्नेछ।
 
-(2) The Team appointed pursuant to Sub-section (1) shall distribute
-citizenship certificates within the directives authorized by the Government of Nepal.
+१५. नागरिकताको प्रमाणपत्रको अभिलेख राख्ने : नेपाली नागरिकताको प्रमाणपत्रको अभिलेख
+राख्ने सम्बन्धी व्यवस्था तोकिए बमोजिम हुनेछ।
 
-23. Power to Frame Rules: The Government of Nepal may frame necessary Rules for the
-fulfillment of the objectives of this Act.
+१६, अधिकार, कर्तव्य र दायित्व लोप नहुने : कुनै कारणबाट कसैको नेपाली नागरिकता
+समाप्त भएमा नेपालको नागरिक रहेका बखत निजले गरेको कुनै कार्यको सम्बन्धमा
+निजको अधिकार, कर्तव्य र दायित्व त्यसरी नागरिकता समाप्त भएको कारणले मात्र लोप
+भएको मानिने छैन।
 
-24. Repeal and Savings: (1) Nepal Citizenship Act, 2020 (1964) is hereby repealed.
+१७. बिवरण सच्याउने : ७१) कुनै व्यक्तिले आफ्नो नेपाली नागरिकताको प्रमाणपत्रमा
+उल्लिखित थर वा उमेर शैक्षिक योग्यताको प्रमाणपत्रमा फरक पर्न गई वा नागरिकताको
+प्रमाणपत्रमा सानातिना त्रुटी भई सो विवरण सच्याउन चाहेमा आवश्यक प्रमाण सहित
+तोकिएको अधिकारी समक्ष निवेदन दिनु पर्नेछ।
+स्पष्टीकरण : यस उपदफाको प्रयोजनको लागि “सानातिना त्रुटी” भन्नाले नागरिकताको
+प्रमाणपत्रमा उल्लिखित विवरणमा तात्विक अन्तर नपर्ने जस्तैः “कुमारी”, “देवी”, “बहादुर”,
+“प्रसाद” जस्ता शब्द बढी राखिएको वा छुटेको वा आकार, इकारमा फरक परेको वा
+यस्तै अन्य सानातिना त्रुटीलाई जनाउनेछ।
 
-(2) All acts performed or actions taken under the repealed Act pursuant to sub-
-section (1) shall be deemed to have been performed or undertaken under this Act.
-8
+(२) उपदफा (१) बमोजिम निवेदन परेपछि सम्बन्धित अधिकारीले निजसँग
+भएको सबुत प्रमाण र आवश्यकता अनुसार साक्षी सरजमिन समेत बुझी त्यस्तो विवरण
+सच्याई पहिले लिएको नागरिकताको प्रमाणपत्र खिची अर्को नागरिकताको प्रमाणपत्र दिन
+सक्नेछ।
+
+(३) विवाह वा सम्बन्ध विच्छेद भएकी महिलाले थर, वतन वा अन्य विवरण
+संशोधन गर्न निवेदन दिएमा तोकिएको अधिकारीले आवश्यक कुरा बुझी पहिले लिएको
+नागरिकताको प्रमाणपत्र खिची थर, वतन वा विवरण संशोधन गरी अर्को नागरिकताको
+प्रमाणपत्र दिन सक्नेछ।
+
+> केही नेपाल ऐन संशोधन गर्ने ऐन, २०७२ द्वारा संशोधित |
+
+७ केही नेपाल ऐन संशोधन गर्ने ऐन, २०६४ द्वारा संशोधित |
+
+१०
+www.lawcommission.gov.np
+
+bac, निबेदन दिन सक्ने : (१) यस ऐनमा अन्यथा लेखिएकोमा बाहेक कुनै अधिकारीले यो ऐन
+
+बमोजिम दिएको आदेश वा गरेको निर्णयबाट मर्का पर्न व्यक्तिले त्यस्तो आदेश थाहा
+
+पाएको मितिले पैंतिस दिनभित्र सम्बन्धित जिल्ला प्रशासन कार्यालय मार्फत वा सोझै नेपाल
+सरकार, गृह मन्त्रालयको सचिव समक्ष निवेदन दिन सक्नेछ।
+
+(२) उपदफा (१) बमोजिमको निवेदन प्राप्त भएमा गृह मन्त्रालयको सचिवले
+आदेश दिने वा निर्णय गर्ने अधिकारीबाट तिस दिनभित्र प्रतिवेदन प्राप्त गरी त्यस्तो
+प्रतिवेदन प्राप्त भएको तिस दिनभित्र निवेदनउपर आफ्नो निर्णय वा आदेश दिनु पर्नेछ र
+निजले गरेको सो निर्णय वा आदेश अन्तिम हुनेछ।
+
+(३) उपदफा (१) र (२) मा जुनसुकै कुरा लेखिएको भए तापनि यस ऐन
+बमोजिम नेपाल सरकारले गरेको आदेश वा निर्णय उपर यस दफा बमोजिम निवेदन दिन
+पाइने छैन।
+
+१९. नामावली प्रकाशन : दफा १४ बमोजिम नेपाली नागरिकताबाट हटाइएका व्यक्तिहरुको
+नामावली प्रत्येक वर्ष नेपाल राजपत्रमा प्रकाशन गरिनेछ।
+
+२०. अधिकार प्रत्यायोजन : (१) नेपाल सरकारले यस ऐन बमोजिम आफूलाई प्राप्त अधिकार
+नेपाल सरकारको कुनै अधिकारीलाई प्रत्यायोजन गर्न सक्नेछ।
+
+तर, दफा १४ बमोजिम नेपाली नागरिकबाट हटाउने अधिकार प्रत्यायोजन हुने
+छैन।
+
+(२) यस ऐन बमोजिम नागरिकताको प्रमाणपत्र वितरण गर्न तोकिएको अधिकारीले
+)आफूलाई प्राप्त अधिकार मध्ये केही अधिकार कुनै अधिकृत कर्मचारी वा कार्यालय प्रमुख
+भई काम गर्ने कम्तीमा राजपत्र अनङ्कित प्रथम श्रेणीको कर्मचारीलाई प्रत्यायोजन गर्न
+सक्नेछ।
+
+२१. दण्ड सजाय : (१) कुनै विदेशीले नेपाली नागरिक भएको दाबी गरी झुठो विवरण दिई
+नेपाली नागरिकता प्राप्त गरेमा एक वर्ष देखि पाँच वर्षसम्म कैद वा पचास हजार रुपैयाँ
+देखि एक लाख रुपैयाँसम्म जरिबाना वा दुवै सजाय हुनेछ। झुठो विवरण दिई नागरिकता
+प्राप्त गरे बापत यस उपदफा बमोजिम सजाय भएमा त्यसरी प्राप्त गरेको नागरिकता
+स्वतः रद्द हुनेछ।
+
+(२) कुनै विदेशीलाई झुठो विवरणका आधारमा नागरिकता दिलाउने कार्यमा
+सनाखत वा सिफारिस गर्ने व्यक्तिलाई छ महिना देखि तीन वर्षसम्म कैद वा पच्चीस
+हजार देखि पचास हजार रुपैयाँसम्म जरिबाना वा दुवै सजाय हुनेछ।
+
+6 दोस्रो संशोधनद्वारा संशोधित |
+
+११
+www.lawcommission.gov.np
+
+(3) कसैले नेपाली नागरिकताको झुठो वा किर्ते प्रमाणपत्र खडा गरेमा वा बनाई
+प्रचलनमा ल्याएमा त्यस्तो कार्य गर्ने, गराउने व्यक्तिलाई एक वर्ष देखि पाँच वर्षसम्म कैद
+वा बीस हजार देखि एक लाख रुपैयाँसम्म जरिबाना वा दुवै सजाय हुनेछ।
+
+%(इक) कसैले दफा ३ को उपदफा (७) वा दफा ५ को उपदफा (३) को
+खण्ड (ग) "वा उपदफा (क) वा उपदफा (५ख) बमोजिम गरेको स्वघोषणा झुट्टो
+ठहरेमा त्यस्तो झुट्टो स्वघोषणा गर्ने व्यक्तिलाई छ महिनादेखि एक वर्षसम्म कैद वा पचास
+हजार रुपैयाँदेखि एक लाख रुपैयाँसम्म जरिबाना वा दुवै सजाय हुनेछ। झुट्टो स्वघोषणा
+गरी नागरिकता प्राप्त गरे बापत यस उपदफा बमोजिम सजाय भएमा त्यसरी प्राप्त गरेको
+नागरिकता स्वतः रद्द हुनेछ।
+
+a(3@) कसैले झुट्टा विवरण दिई दफा ७क. बमोजिम गैर आवासीय नेपाली
+नागरिकता लिएमा तीन महिनादेखि एक वर्षसम्म कैद वा पच्चीस हजार रुपैयाँदेखि पचास
+हजार रुपैयाँसम्म जरिबाना हुनेछ। झुट्टो विवरण दिई गैर आवासीय नेपाली नागरिकता
+प्राप्त गरे बापत यस उपदफा बमोजिम सजाय भएमा त्यसरी प्राप्त गरेको गैर आवासीय
+नेपाली नागरिकता स्वतः रद्द हुनेछ।
+
+a(30) कसैले दफा SC को उपदफा (१) को खण्ड (क१) बमोजिम गरेको
+स्वघोषणा झुट्टो ठहरेमा त्यस्तो झुट्टो स्वघोषणा गर्ने व्यक्तिलाई एक वर्षदेखि तीन वर्षसम्म
+कैद वा एक लाख रुपैयाँदेखि “तीन लाख रुपैयाँसम्म जरिबाना वा दुवै सजाय हुनेछ। झुट्टो
+स्वघोषणा गरी नागरिकता प्राप्त गरेबापत यस उपदफा बमोजिम सजाय भएमा त्यसरी
+प्राप्त गरेको नागरिकता स्वतः रद्द हुनेछ।
+
+१(३घ) कुनै व्यक्ति मनासिब कारण बेगर दफा ८ को उपदफा (ईइक) बमोजिम
+जारी गरिएको म्यादमा उपस्थित नभएमा तीन महिनासम्म कैद वा दश हजार रुपैयाँसम्म
+जरिबाना वा दुवै सजाय हुनेछ।
+
+(४) कसैले सक्कल नागरिकताको प्रमाणपत्रमा भएको विवरणमा आफूखुशी थपघट
+गरेमा वा सच्याएमा त्यस्तो कार्य गर्ने, गराउने व्यक्तिलाई तीन महिनासम्म कैद वा दश
+हजार रुपैयाँसम्म जरिबाना वा दुवै सजाय हुनेछ।
+
+(५) दफा १२ बमोजिम झुठो विवरण दिई नागरिकताको प्रमाणपत्र प्राप्त गरेमा
+वा दफा १७ बमोजिम सच्याइएको विवरण झुठो प्रमाणित भएमा त्यस्तो झुठो विवरण
+
+छि पहिलो संशोधनद्धारा थप।
+™ दोस्रो संशोधनद्वारा AT |
+१२
+www.lawcommission.gov.np
+दिने व्यक्तिलाई वा यो ऐन वा यस ऐन अन्तर्गत बनेको नियमको बर्खिलाप अन्य कुनै
+कसूर गर्ने गराउने व्यक्तिलाई पन्ध्र हजार रुपैयाँसम्म जरिबाना हुनेछ।
+
+(६) नेपाली नागरिकताको प्रमाणपत्र दिने अधिकारीले जानी-जानी वा बदनीयत
+राखी यस ऐन वा यस ऐन अन्तर्गत बनेका नियम विपरीत हुने गरी नागरिकताको
+प्रमाणपत्र दिएमा वा नागरिकताको प्रमाणपत्रको विवरण सच्याएमा त्यस्तो पदाधिकारी वा
+कर्मचारी उपर प्रचलित कानून बमोजिम विभागीय कारबाही हुनेछ।
+
+(७) उपदफा (१), (२) र (३) अन्तर्गत सजाय हुने कसूर गर्न उद्योग गर्ने वा
+मद्दत गर्ने व्यक्तिलाई सोही उपदफामा तोकिएको सजायको आधा सजाय हुनेछ।
+
+२२. नागरिकता टोली खटाउन सक्ने : (१) नेपाल सरकारले आवश्यक देखेमा नागरिकताको
+प्रमाणपत्र वितरण गर्नका लागि नागरिकता प्रमाणपत्र वितरण टोली खटाउन सक्नेछ।
+
+(२) उपदफा (१) बमोजिम खटाइएको टोलीले नेपाल सरकारले दिएको
+निर्देशनको अधीनमा रही नागरिकताको प्रमाणपत्र वितरण गर्नेछ।
+
+"र रक. नाबालक परिचयपत्र प्रदान गर्ने : बाबु वा आमामध्ये एकजना नेपाली नागरिक रहेको वा
+दफा ८ को उपदफा (१) को खण्ड (ग) बमोजिमको नाबालकलाई दफा २०
+बमोजिमको अधिकारीले तोकिएको ढाँचामा नाबालक परिचयपत्र प्रदान गर्नेछ।
+
+२३. नियम बनाउने अधिकार : यस ऐनको उद्देश्य कार्यान्वयन गर्न नेपाल सरकारले आवश्यक
+नियमहरु बनाउन सक्नेछ।
+२४. खारेजी र बचाउ : (१) नेपाल नागरिकता ऐन, २०२० खारेज गरिएको छ।
+(२) उपदफा (१) बमोजिम खारेज भएको ऐन बमोजिम भएगरेका कामकारबाही
+यसै ऐन अन्तर्गत भएगरेको मानिनेछ।
+™ दोस्रो संशोधनद्वारा AT |
+द्र्ष्टव्यः न्याय प्रशासन ऐन, २०७३ द्वारा रुपान्तर भएका शब्दहरू:-
+“पुनरावेदन अदालत ” को सट्टा “उच्च अदालत” |
+१२३
+www.lawcommission.gov.np
+अनुसूची
+(दफा ५ को उपदफा (६) सँग सम्बन्धित)
+
+म ...................:.-.०:२.०:२.०... ईश्वरको नाममा शपथ लिन्छु--सत्यनिष्ठापूर्वक प्रतिज्ञा
+गर्दछु कि नेपाल राज्य, प्रचलित संविधान र कानूनप्रति बफादार रही श्रद्धा एवं निष्ठापूर्वक नेपाली
+नागरिकको रुपमा आफ्नो कर्तव्य पालना गर्नेछु।
+
+दस्तखत :-
+नाम :-
+मिति :- वतन :-
+१४

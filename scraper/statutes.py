@@ -190,6 +190,10 @@ def catalogue(con):
             # Two upload patterns are used; the sidebar's "legal maxims" PDF appears on every page.
             pdfs = [u for u in re.findall(r"https?://giwmscdn[^\"' ]+?\.pdf", str(soup), re.I)
                     if "1714977234_32" not in u]
+            # some pages carry both the Nepali text and an English translation: prefer the Nepali one
+            from urllib.parse import unquote
+            pdfs.sort(key=lambda u: (bool(re.search(r"english|\beng\b", unquote(u), re.I)),
+                                     not re.search(r"[\u0900-\u097F]", unquote(u))))
             return url, label, title, pdfs[0] if pdfs else ""
         except Exception as e:
             return url, label, "", f"ERR {e}"
@@ -238,7 +242,9 @@ def ocr_pdf(pdf: Path) -> str:
     return "\f".join(texts), pages
 
 
-SEC_RE = re.compile(r"^\s*[«»*%&~#@$+×✽♦•\"'‘’“”|_©^]{0,3}\s*([०-९0-9]{1,4})([क-ह]?)\s*\.\s+(.+)$")
+SEC_RE = re.compile(r"^\s*[«»*%&~#@$+×✽♦•\"'‘’“”|_©^]{0,3}\s*([०-९0-9]{1,4})([क-ह]?)\s*[.,]\s*(\S.+)$")
+# OCR sometimes garbles the number itself ("3%." for "३९."): accepted only with a "heading:" line, numbered in sequence
+GARBLED_RE = re.compile(r"^\s*([०-९0-9][०-९0-9%$&?@#Sगज]{0,3})\s*[.,]\s*([^:ः\d]{3,90}[:ः].*)$")
 PART_RE = re.compile(r"^\s*भाग\s*[-–]?\s*([०-९0-9]+)\s*$")
 CHAP_RE = re.compile(r"^\s*परिच्छेद\s*[-–]?\s*([०-९0-9]+)\s*$")
 AMEND_MARK = re.compile(r"((?:[^\n।]{0,60})संशोधन गर्ने (?:ऐन|अध्यादेश)[^।\n]{0,10}[०-९0-9]{4}\s*द्वारा\s*(?:संशोधित|थपिएको|झिकिएको))|"
@@ -318,6 +324,15 @@ def parse_act(text: str) -> dict:
             chapter, want_chapter_title = st, True
             continue
         m = SEC_RE.match(st)
+        gm = None if m else GARBLED_RE.match(st)
+        if gm and prev and not re.fullmatch(r"[०-९0-9]+", gm.group(1)):
+            heading, body = re.split(r"[:ः]", gm.group(2), maxsplit=1)
+            cur = {"part": part, "chapter": chapter, "number": str(prev + 1), "heading": heading.strip(" -–—_"),
+                   "body": body.strip(" -–—"), "uncertain": True}
+            sections.append(cur)
+            prev += 1
+            want_chapter_title = False
+            continue
         if want_chapter_title and not m:
             chapter = f"{chapter} — {st}"
             want_chapter_title = False
@@ -359,6 +374,29 @@ def parse_act(text: str) -> dict:
     return {**meta, "commencement": commencement, "sections": sections, "gaps": gaps}
 
 
+def mostly_english(t: str) -> bool:
+    return len(re.findall(r"[A-Za-z]", t)) > 0.3 * len(re.findall(r"[\u0900-\u097F]", t))
+
+
+def nepali_alternative(s, page_url: str, current: str) -> str | None:
+    """Some pages carry the Nepali text and an English translation with uninformative file names:
+    read page 1 of each other PDF and return the first one that is in Nepali."""
+    html = get(s, page_url)
+    for u in dict.fromkeys(re.findall(r"https?://giwmscdn[^\"' ]+?\.pdf", html, re.I)):
+        if u == current or "1714977234_32" in u:
+            continue
+        with tempfile.TemporaryDirectory() as td:
+            f = Path(td) / "x.pdf"
+            f.write_bytes(get(s, u, binary=True))
+            subprocess.run(["pdftoppm", "-r", "150", "-gray", "-f", "1", "-l", "1", "-png", "-singlefile", str(f),
+                            str(Path(td) / "p")], capture_output=True, timeout=300)
+            first = subprocess.run(["tesseract", str(Path(td) / "p.png"), "-", "-l", "nep+eng"], capture_output=True,
+                                   text=True, env={**os.environ, "OMP_THREAD_LIMIT": "1"}).stdout
+            if not mostly_english(first):
+                return u
+    return None
+
+
 def text(con, act_filter: str | None, redo: bool):
     PDF_DIR.mkdir(parents=True, exist_ok=True)
     TXT_DIR.mkdir(parents=True, exist_ok=True)
@@ -388,6 +426,18 @@ def text(con, act_filter: str | None, redo: bool):
                 t, pages = ocr_pdf(pdf)
                 txt.write_text(t, encoding="utf-8")
                 src.write_text(pdf_url)
+            if mostly_english(t):
+                page_url = con.execute("SELECT page_url FROM acts WHERE id=?", (aid,)).fetchone()[0]
+                alt = nepali_alternative(s, page_url, pdf_url)
+                if alt:
+                    log(f"  {title}: text was the English translation — switching to the Nepali PDF")
+                    con.execute("UPDATE acts SET pdf_url=? WHERE id=?", (alt, aid))
+                    con.commit()
+                    pdf = PDF_DIR / f"{aid}.pdf"
+                    pdf.write_bytes(get(s, alt, binary=True))
+                    t, pages = ocr_pdf(pdf)
+                    txt.write_text(t, encoding="utf-8")
+                    src.write_text(alt)
             p = parse_act(t)
             con.execute("DELETE FROM sections WHERE act_id=?", (aid,))
             con.execute("DELETE FROM amendments WHERE act_id=?", (aid,))

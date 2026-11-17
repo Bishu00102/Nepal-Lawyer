@@ -144,6 +144,10 @@ function lawLink(c) {
     return `<a href="#/law/${c.act}?s=${encodeURIComponent(base)}">${esc(c.label)}</a>`;
   }
   if (c.type === "nkp" && c.nkp) return `<a href="#/nkp/${c.nkp}">${esc(c.label)}</a>`;
+  if (c.type === "old_constitution" && typeof constitutionHref === "function") {
+    const h = constitutionHref(c.label, c.sec);
+    if (h) return `<a href="${h}" title="पुरानो संविधान">${esc(c.label)}</a>`;
+  }
   return `<span title="यो कानून/संस्करण डाटाबेसमा छैन">${esc(c.label)}</span>`;
 }
 

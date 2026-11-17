@@ -22,6 +22,10 @@ precedents and provisions are detected by pattern matching and are labelled as m
 | **न्यायाधीश · Judges** | cause lists + NKP | Per court: decisions, cases listed, days sitting, outcome mix, decisions with co-bench judges, reported precedents. |
 | **अनुसन्धान · Research** | all of the above | Workflow 1 statutory research, Workflow 2 precedent research, Workflows 3–5 case-file worksheet (chronology, provisions cited, candidate offences, evidence matrix, procedural checklist, research questions, defence & hearing prep). **The case-file tool runs entirely in the browser — client documents are never uploaded.** |
 | **मस्यौदा · Drafting** | chosen sections + precedents | बहस नोट, लिखित बहस, थुनछेक/धरौटी निवेदन, पुनरावेदन पत्र, कानूनी राय, जिरह प्रश्नावली. Add sources with **+ मस्यौदामा** on any statute section or NKP headnote, or from the case-file worksheet. **Without AI:** a formatted draft with exact quotes and citations, gaps marked for the lawyer. **With AI (optional):** Claude (`claude-opus-5-5`) writes a full draft using only the chosen sources. It runs from the lawyer's browser with their own Anthropic API key, only after they tick a consent box; party and witness names are replaced by placeholders before sending; any section or NKP number not among the chosen sources is flagged in red. Export to Word (.doc) or print/PDF. |
+| **सल्लाह · Ask a question** | Constitution + Acts + NKP | For the public: ask in Nepali or English. The site finds the relevant Constitution articles, Act sections and NKP headnotes, and the AI answers in plain language, citing them as clickable [L1]/[P1] links. Any reference that isn't among the sources is flagged red. General legal information, not advice; points to a lawyer. Runs through the site's AI server: free Cloudflare Workers AI by default (Claude optional), with daily limits. |
+| **वकिल · Find a lawyer** | lawyers who sign up | Directory by district and subject (call, WhatsApp, email), consultation request form, lawyer sign-up. The owner approves lawyers on the admin page. |
+| **AI सहायक · AI assistant** | all of the above | For lawyers: multi-turn research chat with the case facts, plus one-click tasks (strategy, defence grounds, assessing the prosecution, procedural defects, bail research, hearing prep, cross-examination plan, evidence matrix). Sources go to the draft basket with one click. Uses the site's free AI with an access code from the owner, or optionally the lawyer's own (paid) Anthropic key; client names are hidden before sending. |
+| **संविधान · Constitutions** | Law Commission; ConstitutionNet / FAOLEX | All 7 constitutions (2004, 2007, 2015, 2019, 2047, 2063, 2072), split into articles and searchable; the 2072 Constitution in Nepali and the official English translation side by side, with the 1st and 2nd Amendments and the articles they changed. Old-constitution citations in judgments link to the right constitution. Nepali originals of older constitutions are added automatically when the Law Commission's old-law repository is reachable. |
 | **खोज · Search** | everything | One box across hearings, precedents, SC publications and statute sections. |
 
 District courts: the weekly list of authenticated judgments for all 77 district courts is collected
@@ -86,6 +90,13 @@ The first full NKP load takes about 2 hours, and statutes OCR about 30 minutes. 
 
 The site will be at `https://<username>.github.io/<repo>/`. If the courts ever block GitHub's
 servers, run the same scripts daily on a computer in Nepal and upload `site/`.
+
+## AI features setup
+
+See [`docs/SETUP-AI.md`](docs/SETUP-AI.md): a free Cloudflare account and three GitHub secrets. The AI is free
+(Cloudflare Workers AI, `@cf/qwen/qwen3-30b-a3b-fp8`, 10,000 free Neurons/day). Adding an `ANTHROPIC_API_KEY` secret
+optionally switches it to Claude.
+The AI server code is in `worker/` (Cloudflare Worker; tests: `cd worker && npm test`).
 
 ## Known gaps (see `docs/deliverables/01-data-inventory.md`)
 

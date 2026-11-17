@@ -25,6 +25,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 300
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -43,6 +45,31 @@ jobs:
         run: python scraper/nkp.py --refresh-latest 300
       - name: Cross-references (precedents <-> provisions)
         run: python scraper/links.py
+      - name: AI server (Cloudflare Worker) — deploy when the secrets are set
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        working-directory: worker
+        run: |
+          npm ci --no-audit --no-fund
+          # find or create the storage namespace and put its id into wrangler.toml
+          ID=$(npx wrangler kv namespace list | python3 -c "import json,sys; print(next((n['id'] for n in json.load(sys.stdin) if n['title'].endswith('STORE')), ''))")
+          if [ -z "$ID" ]; then
+            npx wrangler kv namespace create STORE
+            ID=$(npx wrangler kv namespace list | python3 -c "import json,sys; print(next((n['id'] for n in json.load(sys.stdin) if n['title'].endswith('STORE')), ''))")
+          fi
+          sed -i "s/KV_NAMESPACE_ID/$ID/" wrangler.toml
+          OWNER=$(echo "${{ github.repository_owner }}" | tr 'A-Z' 'a-z')
+          sed -i "s#https://bishu00102.github.io#https://$OWNER.github.io#" wrangler.toml
+          npx wrangler deploy | tee deploy.log
+          [ -n "$ANTHROPIC_API_KEY" ] && printf '%s' "$ANTHROPIC_API_KEY" | npx wrangler secret put ANTHROPIC_API_KEY
+          [ -n "$ADMIN_PASSWORD" ] && printf '%s' "$ADMIN_PASSWORD" | npx wrangler secret put ADMIN_PASSWORD
+          URL=$(grep -oE 'https://[a-z0-9.-]+\.workers\.dev' deploy.log | head -1)
+          echo "AI_PROXY_URL=$URL" >> "$GITHUB_ENV"
+          echo "AI server: $URL"
       - name: Build website data
         run: python scraper/build_site.py
       - name: Commit data

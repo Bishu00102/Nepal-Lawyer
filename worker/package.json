@@ -1,0 +1,8 @@
+{
+  "name": "nepal-lawyer-ai",
+  "private": true,
+  "type": "module",
+  "scripts": { "deploy": "wrangler deploy", "test": "node --test test/worker.test.js" },
+  "dependencies": { "@anthropic-ai/sdk": "1.4.0" },
+  "devDependencies": { "wrangler": "4.156.2" }
+}
