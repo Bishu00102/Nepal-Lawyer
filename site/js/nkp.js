@@ -112,7 +112,8 @@ addRoute("nkp", /^\/nkp\/(\d+)$/, async m => {
     <p><a class="btn" href="https://nkp.gov.np/full_detail/${id}" target="_blank" rel="noopener">nkp.gov.np मा मूल प्रति ↗</a>
       <button class="btn ghost" id="copyCit">उद्धरण कपी · Copy citation</button></p>
     ${hn.length ? `<div class="panel principle-box"><b>ने.का.प.मा प्रकाशित सिद्धान्त (headnotes)</b>
-      ${hn.map(h => `<p>${esc(h[0])}${h[1] ? ` <a class="small" href="#/nkp/${id}" data-para="${esc(toLat(h[1]).split(/[^0-9]/)[0])}">(प्रकरण नं. ${esc(h[1])})</a>` : ""}</p>`).join("")}
+      ${hn.map((h, i) => `<p>${esc(h[0])}${h[1] ? ` <a class="small" href="#/nkp/${id}" data-para="${esc(toLat(h[1]).split(/[^0-9]/)[0])}">(प्रकरण नं. ${esc(h[1])})</a>` : ""}
+        <button class="btn ghost sm add-draft" data-hn="${i}">+ मस्यौदामा</button></p>`).join("")}
       <p class="small">यी ने.का.प.ले प्रकाशित गरेका सिद्धान्त हुन्। These headnotes are as published by NKP, not generated.</p></div>` : ""}
     ${doc.relied ? `<p><b>अवलम्बित नजिर:</b> ${esc(doc.relied)}</p>` : ""}
     ${doc.related_law ? `<p><b>सम्बद्ध कानून:</b> ${esc(doc.related_law)}</p>` : ""}
@@ -125,6 +126,11 @@ addRoute("nkp", /^\/nkp\/(\d+)$/, async m => {
     ${sameTitle ? `<p><a href="#/nkp?q=${encodeURIComponent(d.title)}">यही विषय (“${esc(d.title)}”) का अन्य ${toDev(sameTitle)} नजिर →</a></p>` : ""}
     <h2 style="margin:18px 0 8px">पूर्ण पाठ · Full text</h2>
     <div class="doc-text">${textHTML}</div>`;
+  app.querySelectorAll(".add-draft[data-hn]").forEach(b => b.onclick = () => {
+    const h = hn[+b.dataset.hn];
+    draftAddPrecedent({ id, citation: nkpCitation(d), title: d.title, headnote: h[0], para: h[1] || "" });
+    flashAdded(b);
+  });
   document.getElementById("copyCit").onclick = e => {
     const cit = `${d.title}, ${nkpCitation(d)}${d.date ? `, फैसला मिति ${shortDate(d.date)}` : ""}`;
     navigator.clipboard?.writeText(cit).then(() => { e.target.textContent = "कपी भयो ✓"; }).catch(() => prompt("Copy:", cit));
