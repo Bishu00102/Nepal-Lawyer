@@ -1,0 +1,15 @@
+# Cloudflare Worker for the Nepal Lawyer site's AI and consultation features.
+# Deployed automatically by .github/workflows/daily.yml when the CLOUDFLARE_API_TOKEN secret exists.
+name = "nepal-lawyer-ai"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+DAILY_LIMIT = "200"                                   # total AI answers per day, all visitors together
+ALLOWED_ORIGIN = "https://bishu00102.github.io"       # only the website may call this server
+
+# The KV namespace id is filled in by the deploy workflow (it creates the namespace if missing).
+[[kv_namespaces]]
+binding = "STORE"
+id = "KV_NAMESPACE_ID"

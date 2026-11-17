@@ -98,6 +98,12 @@ def main() -> None:
                      for (n, c), s in judge_stats.items()), key=lambda j: (-j["decisions"], j["name"]))
 
     export_documents(con)
+    # where the AI / consultation server lives (set by the deploy step; empty = AI not configured)
+    import os
+    dump(OUT / "config.json", {"ai_url": os.environ.get("AI_PROXY_URL", "").rstrip("/")})
+    cons = ROOT / "data" / "constitutions.json"
+    if cons.exists():
+        (OUT / "constitutions.json").write_text(cons.read_text(encoding="utf-8"), encoding="utf-8")
     for extra in ("export_nkp", "export_statutes"):
         fn = globals().get(extra)
         if fn:

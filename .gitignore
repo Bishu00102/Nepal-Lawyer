@@ -12,3 +12,4 @@ data/nkp.db
 data/links.db
 # generated website data (built by scraper/build_site.py in CI)
 site/data/
+data/constitution_src/

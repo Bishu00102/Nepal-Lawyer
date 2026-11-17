@@ -27,6 +27,8 @@ jobs:
         run: python scraper/statutes.py catalogue
       - name: OCR + parse criminal-law acts whose text is missing
         run: python scraper/statutes.py text
+      - name: Constitutions (all, Nepali + English)
+        run: python scraper/constitutions.py
       - name: Commit
         run: |
           git config user.name "court-tracker-bot"
