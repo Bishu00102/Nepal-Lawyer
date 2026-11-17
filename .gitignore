@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.DS_Store
+*-journal
+*-wal
+*-shm
+# originals downloaded from the courts / Law Commission (large; re-downloadable)
+data/pdfs/
+data/statute_pdfs/
+# rebuilt from committed sources
+data/nkp.db
+data/links.db
+# generated website data (built by scraper/build_site.py in CI)
+site/data/

@@ -1,2 +1,100 @@
-# Nepal-Lawyer
-This is complete nepali constitution website 
+# अदालती नतिजा · Nepal Court Tracker
+
+_Nepal-Lawyer: Nepali law research website — court results, precedents (NKP), statutes incl. the Constitution, research tools._
+
+A free, self-updating legal research website for Nepali lawyers, built from official public
+sources only. It implements the criminal-law research platform described in
+[`docs/criminal_law_spec.pdf`](docs/criminal_law_spec.pdf); the 12 deliverables that spec asks for
+are in [`docs/deliverables/`](docs/deliverables/).
+
+Nothing on the site is written by AI. Every judgment, headnote, statute section and result is copied
+from the court, NKP or Law Commission, with a link to the original. Cross-references between
+precedents and provisions are detected by pattern matching and are labelled as machine-detected.
+
+## What it contains
+
+| Section | Source | Contents |
+|---|---|---|
+| **दैनिक नतिजा · Daily results** | supremecourt.gov.np cause lists | Supreme Court and all 18 High Court benches: every bench, its judges, every case listed, status and result (फैसला, आदेश, स्थगित, सदर, उल्टी…), order PDFs. Filters for decided, criminal and in-custody cases. Updated 3× a day. |
+| **नजिर · Precedents** | nkp.gov.np | All ~10,500 decisions reported in Nepal Kanoon Patrika (BS 2015–2082): citation (भाग/साल/महिना/अंक/नि.नं.), date, bench, judges, case numbers, parties, the published headnotes with paragraph (प्रकरण) references, counsel, precedents relied on, related law, lower courts, full text. Ranked search; “cited by” links. |
+| **फैसला / आदेश · SC orders** | Supreme Court homepage | ~320 published judgments, orders, interim orders and notices with the legal principle the court highlights, the bench, OCR'd full text, original PDF, and the case's hearing history. |
+| **कानून · Statutes** | lawcommission.gov.np | Catalogue of ~390 laws with links to the official PDF; 31 criminal-justice laws (Constitution, मुलुकी अपराध संहिता, फौजदारी कार्यविधि संहिता, प्रमाण ऐन, special criminal acts…) split into sections, with Act number, dates, amendment history, a **"law as on the date of the offence"** check, and the precedents citing each section. |
+| **न्यायाधीश · Judges** | cause lists + NKP | Per court: decisions, cases listed, days sitting, outcome mix, decisions with co-bench judges, reported precedents. |
+| **अनुसन्धान · Research** | all of the above | Workflow 1 statutory research, Workflow 2 precedent research, Workflows 3–5 case-file worksheet (chronology, provisions cited, candidate offences, evidence matrix, procedural checklist, research questions, defence & hearing prep). **The case-file tool runs entirely in the browser — client documents are never uploaded.** |
+| **खोज · Search** | everything | One box across hearings, precedents, SC publications and statute sections. |
+
+District courts: the weekly list of authenticated judgments for all 77 district courts is collected
+daily (`scraper/district.py`) and kept as history.
+
+## How it works
+
+```
+scraper/sc_daily.py         cause lists & results: SC, 18 High Court benches, Special Court   -> data/court.db
+scraper/district.py         district courts' authenticated judgments (weekly lists)            -> data/court.db
+scraper/sc_publications.py  SC published judgments/orders/notices; Nepali OCR when needed      -> data/court.db, data/texts/
+scraper/nkp.py              Nepal Kanoon Patrika archive                                       -> data/nkp/ (shards) + data/nkp.db
+scraper/statutes.py         Law Commission catalogue; OCR + section parsing of criminal laws   -> data/statutes.db, data/statute_texts/
+scraper/links.py            citations: Act+दफा, Constitution धारा, Muluki Ain, NKP citations  -> data/links.db
+scraper/build_site.py       exports static JSON for the website                                -> site/data/
+site/                       the website (plain HTML/JS, no server, no build step)
+```
+
+GitHub Actions run everything automatically:
+- `.github/workflows/daily.yml` (3× a day) runs the courts, publications, new NKP decisions, links, then rebuilds and publishes the site.
+- `.github/workflows/weekly-statutes.yml` (Sundays) checks the Law Commission for new or amended laws.
+
+### Text quality
+- **NKP** pages are real Unicode text, so they're exact.
+- **Supreme Court PDFs and Law Commission statutes** are scans, or Word exports whose Devanagari text layer is garbled (legacy fonts such as Preeti/Kalimati with broken mappings). These are read with Tesseract OCR (Nepali + English). OCR text is clearly labelled and can contain errors, so always quote from the linked original. Statute sections whose numbers OCR could not read are listed on each act page.
+
+## Run it on your computer
+
+```bash
+sudo apt-get install tesseract-ocr tesseract-ocr-nep poppler-utils
+```
+
+```bash
+pip install -r requirements.txt
+```
+
+```bash
+python scraper/sc_daily.py --days 30
+```
+
+```bash
+python scraper/sc_publications.py && python scraper/nkp.py && python scraper/statutes.py catalogue && python scraper/statutes.py text
+```
+
+```bash
+python scraper/links.py && python scraper/build_site.py
+```
+
+```bash
+cd site && python -m http.server 8000
+```
+
+Then open http://localhost:8000. (On Windows, install Tesseract with the Nepali language pack and Poppler.)
+
+The first full NKP load takes about 2 hours, and statutes OCR about 30 minutes. After that, updates take minutes.
+
+## Put it online for free (GitHub Pages)
+
+1. Create a GitHub repository and push this folder.
+2. **Settings → Pages → Source: GitHub Actions.**
+3. **Actions → Daily court update → Run workflow** once. It then runs on its own.
+
+The site will be at `https://<username>.github.io/<repo>/`. If the courts ever block GitHub's
+servers, run the same scripts daily on a computer in Nepal and upload `site/`.
+
+## Known gaps (see `docs/deliverables/01-data-inventory.md`)
+
+- **Special Court:** the public case system returns no records, and specialcourt.gov.np is unreachable.
+- **Office of the Attorney General, Nepal Gazette (Rajpatra), Judicial Academy:** unreachable during collection.
+- **Statutes:** only current consolidated texts are published. Historical text is flagged, not reconstructed.
+- **Treatment of precedents** (followed / distinguished / overruled) is not auto-determined; "cited by" lists are given for a lawyer to verify.
+- **Police investigation records and case diaries** are confidential and not collected.
+
+## Disclaimer
+
+This is not an official record. Data is copied automatically and may lag the sources or contain
+OCR/parsing errors. Always check the original judgment, order or statute before relying on it.

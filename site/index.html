@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ne">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>अदालती नतिजा · Nepal Court Tracker</title>
+<meta name="description" content="सर्वोच्च अदालतको दैनिक पेसी, फैसला र आदेश — दैनिक अद्यावधिक। Daily Supreme Court of Nepal cause lists and results for lawyers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#/">
+      <span class="seal" aria-hidden="true">⚖</span>
+      <span>
+        <strong>अदालती नतिजा</strong>
+        <small>Nepal Court Tracker</small>
+      </span>
+    </a>
+    <nav class="tabs" aria-label="Main">
+      <a href="#/" data-tab="day">दैनिक नतिजा<span>Daily results</span></a>
+      <a href="#/nkp" data-tab="nkp">नजिर<span>Precedents</span></a>
+      <a href="#/judgments" data-tab="judgments">फैसला / आदेश<span>SC orders</span></a>
+      <a href="#/laws" data-tab="laws">कानून<span>Statutes</span></a>
+      <a href="#/judges" data-tab="judges">न्यायाधीश<span>Judges</span></a>
+      <a href="#/research" data-tab="research">अनुसन्धान<span>Research</span></a>
+      <a href="#/search" data-tab="search">खोज<span>Search</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="app" aria-live="polite">
+  <p class="loading">लोड हुँदैछ…</p>
+</main>
+
+<footer class="wrap foot">
+  <p>स्रोत / Sources (official, public): <a href="https://supremecourt.gov.np" target="_blank" rel="noopener">सर्वोच्च अदालत</a> (पेसी, फैसला/आदेश, उच्च अदालत), <a href="https://nkp.gov.np" target="_blank" rel="noopener">नेपाल कानून पत्रिका</a>, <a href="https://lawcommission.gov.np" target="_blank" rel="noopener">नेपाल कानून आयोग</a>. Data is copied automatically and may lag the sources.
+  यो आधिकारिक अभिलेख होइन — कानुनी प्रयोजनका लागि सधैं अदालतको मूल फैसला/आदेश हेर्नुहोस्। Always verify against the original order or judgment.</p>
+  <p id="updated"></p>
+</footer>
+<script src="js/core.js"></script>
+<script src="js/courts.js"></script>
+<script src="js/judgments.js"></script>
+<script src="js/nkp.js"></script>
+<script src="js/laws.js"></script>
+<script src="js/research.js"></script>
+<script>boot();</script>
+</body>
+</html>
