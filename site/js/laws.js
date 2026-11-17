@@ -96,6 +96,7 @@ addRoute("laws", /^\/law\/(\d+)$/, async (m, params) => {
       ${flag ? `<p class="warn">⚠️ ${shortDate(asof)} पछि भएको संशोधन (${flag.map(a => esc(a.title)).join("; ")}) ले यो ${id === 13437 ? "धारा" : "दफा"} परिवर्तन गरेको देखिन्छ — त्यस मितिमा लागू पाठका लागि राजपत्र/संशोधन ऐन हेर्नुहोस्।</p>` : ""}
       <div class="sec-body">${terms.length ? highlight(s.body, terms, 100000) : esc(s.body)}</div>
       ${s.amended_by ? `<p class="small amend">✎ ${esc(s.amended_by)}</p>` : ""}
+      <button class="btn ghost sm add-draft" data-sec="${esc(s.number)}">+ मस्यौदामा</button>
       ${citedHTML(s)}
     </section>`;
   }).join("");
@@ -122,6 +123,10 @@ addRoute("laws", /^\/law\/(\d+)$/, async (m, params) => {
     <div class="toolbar"><input type="search" id="sq" placeholder="यस ऐनभित्र खोज्नुहोस् (e.g. जरिवाना, थुना, म्याद)" value="${esc(q)}"></div>
     <div class="law-body">${body || `<p class="empty">केही भेटिएन।</p>`}</div>`;
 
+  app.querySelectorAll(".add-draft[data-sec]").forEach(b => b.onclick = () => {
+    const s = act.section_list.find(x => x.number === b.dataset.sec);
+    if (s) { draftAddSection(act, s); flashAdded(b); }
+  });
   document.getElementById("asofBtn").onclick = () => setHash(`#/law/${id}`, { asof: document.getElementById("asof").value.trim(), q });
   document.getElementById("sq").onchange = e => setHash(`#/law/${id}`, { q: e.target.value.trim(), asof });
   if (sec) {

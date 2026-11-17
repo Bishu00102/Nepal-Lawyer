@@ -59,6 +59,7 @@ addRoute("research", /^\/research$/, async () => {
       <a class="jcard" href="#/research/statute"><span class="t">कार्यप्रवाह १ · Workflow 1</span><h3>कानूनी व्यवस्था खोज</h3><p class="small">कसुर वा दफा राख्नुहोस् → लागू ऐन, दफा, सजाय, संशोधन, उद्धृत नजिर।</p></a>
       <a class="jcard" href="#/research/precedent"><span class="t">कार्यप्रवाह २ · Workflow 2</span><h3>नजिर खोज</h3><p class="small">कानूनी प्रश्न वा तथ्य राख्नुहोस् → सान्दर्भिक नजिर, सिद्धान्त, प्रकरण नं., उद्धरण।</p></a>
       <a class="jcard" href="#/casefile"><span class="t">कार्यप्रवाह ३–५ · Workflows 3–5</span><h3>मुद्दा फाइल विश्लेषण</h3><p class="small">जाहेरी, अभियोग पत्र, बयान… → घटनाक्रम, प्रमाण तालिका, कानूनी प्रश्न, प्रतिरक्षा र बहस तयारी कार्यपत्र। 🔒 तपाईंको कम्प्युटरमै प्रशोधन।</p></a>
+      <a class="jcard" href="#/draft"><span class="t">मस्यौदा · Drafting</span><h3>बहस नोट, लिखित बहस, निवेदन</h3><p class="small">छानेका दफा र नजिरबाट बहस नोट, लिखित बहस, धरौटी निवेदन, पुनरावेदन, कानूनी राय, जिरह प्रश्नावली — AI सहित वा बिना।</p></a>
       <a class="jcard" href="#/search"><span class="t">सबै स्रोत</span><h3>एकीकृत खोज</h3><p class="small">पेसी, फैसला/आदेश, नजिर र कानून — एकै ठाउँबाट।</p></a>
     </div>`;
 });
@@ -247,7 +248,8 @@ addRoute("research", /^\/casefile$/, async () => {
     <p class="ok">🔒 गोपनीयता: यो पृष्ठले तपाईंको कागजात कुनै सर्भरमा पठाउँदैन — सबै प्रशोधन यही ब्राउजरमा हुन्छ र पृष्ठ बन्द गरेपछि केही बाँकी रहँदैन। Nothing you paste here leaves your computer.</p>
     <textarea id="cf" rows="10" placeholder="यहाँ मुद्दाको कागजातको पाठ टाँस्नुहोस्…"></textarea>
     <p><input type="file" id="cff" accept=".txt,text/plain" multiple> <button class="btn" id="cgo">विश्लेषण गर्नुहोस्</button>
-      <button class="btn ghost" id="cdl" hidden>कार्यपत्र डाउनलोड (.html)</button> <button class="btn ghost" id="cpr" hidden>प्रिन्ट</button></p>
+      <button class="btn ghost" id="cdl" hidden>कार्यपत्र डाउनलोड (.html)</button> <button class="btn ghost" id="cpr" hidden>प्रिन्ट</button>
+      <button class="btn ai" id="cdraft" hidden>📝 यसबाट बहस/निवेदनको मस्यौदा बनाउनुहोस् →</button></p>
     <div id="cout" class="worksheet"></div>`;
   const ta = document.getElementById("cf");
   document.getElementById("cff").onchange = async e => {
@@ -261,9 +263,17 @@ addRoute("research", /^\/casefile$/, async () => {
     const laws = await coreLaws();
     out.innerHTML = worksheetHTML(analyse(ta.value, laws), ta.value);
     document.getElementById("cdl").hidden = false;
+    document.getElementById("cdraft").hidden = false;
     document.getElementById("cpr").hidden = false;
   };
   document.getElementById("cpr").onclick = () => window.print();
+  document.getElementById("cdraft").onclick = async () => {
+    // hand the facts to the drafting page (session only) and pre-load the suggested sections
+    try { sessionStorage.setItem("nct-casefile", ta.value.trim()); } catch { /* ignore */ }
+    const a = analyse(ta.value, await coreLaws());
+    a.mentioned.filter(m => m.sec).forEach(m => draftAddSection(m.act, m.sec));
+    location.hash = "#/draft";
+  };
   document.getElementById("cdl").onclick = () => {
     const html = `<!doctype html><html lang="ne"><head><meta charset="utf-8"><title>मुद्दा कार्यपत्र</title>
       <style>body{font-family:"Noto Sans Devanagari",sans-serif;max-width:1000px;margin:20px auto;padding:0 16px;line-height:1.6}table{border-collapse:collapse;width:100%;margin:8px 0}td,th{border:1px solid #ccc;padding:6px;vertical-align:top;text-align:left}h2{margin-top:24px}.small{color:#555;font-size:13px}</style></head>
