@@ -1,0 +1,36 @@
+name: Weekly statutes refresh
+
+on:
+  schedule:
+    - cron: "17 3 * * 0"     # Sundays 08:47 NPT
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: court-data
+  cancel-in-progress: false
+
+jobs:
+  statutes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: sudo apt-get update -q && sudo apt-get install -y -q tesseract-ocr tesseract-ocr-nep poppler-utils
+      - name: Law Commission catalogue (new acts, amendments, ordinances)
+        run: python scraper/statutes.py catalogue
+      - name: OCR + parse criminal-law acts whose text is missing
+        run: python scraper/statutes.py text
+      - name: Commit
+        run: |
+          git config user.name "court-tracker-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "Statutes update $(date -u +%F)"
+          git push

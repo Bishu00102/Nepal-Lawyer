@@ -1,0 +1,59 @@
+name: Daily court update
+
+on:
+  schedule:
+    # Nepal time = UTC+5:45. 18:40, 22:40 and 07:40 NPT: after hearings, late results, next day's list.
+    - cron: "55 12 * * *"
+    - cron: "55 16 * * *"
+    - cron: "55 1 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days back to re-scrape cause lists"
+        default: "8"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: court-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Install Nepali OCR
+        run: sudo apt-get update -q && sudo apt-get install -y -q tesseract-ocr tesseract-ocr-nep poppler-utils
+      - name: Cause lists and results (Supreme Court, High Courts, Special Court)
+        run: python scraper/sc_daily.py --days "${{ github.event.inputs.days || '8' }}"
+      - name: District courts — authenticated judgments this week
+        run: python scraper/district.py
+      - name: Supreme Court published judgments / orders (new ones only, OCR)
+        run: python scraper/sc_publications.py --workers 4
+      - name: Nepal Kanoon Patrika — new decisions
+        run: python scraper/nkp.py --refresh-latest 300
+      - name: Cross-references (precedents <-> provisions)
+        run: python scraper/links.py
+      - name: Build website data
+        run: python scraper/build_site.py
+      - name: Commit data
+        run: |
+          git config user.name "court-tracker-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "Data update $(date -u +%F)"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
