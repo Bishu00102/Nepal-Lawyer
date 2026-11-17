@@ -1,7 +1,8 @@
 "use strict";
 /* Drafting: बहस नोट, लिखित बहस, धरौटी/थुनछेक निवेदन, कानूनी राय, जिरह प्रश्नावली, पुनरावेदन पत्र.
    B (no AI): assembles a formatted draft from what the lawyer entered and the sections/precedents they chose.
-   A (AI):    sends the same material to Claude with the lawyer's own API key, after explicit consent.
+   A (AI):    sends the same material to the site's free AI (lawyer access code) or to Claude with the
+              lawyer's own API key, after explicit consent.
    The draft is kept only in this browser (localStorage) until the lawyer clears it. */
 
 const DKEY = "nct-draft-v1";
@@ -252,6 +253,16 @@ function checkCitations(text, d) {
 }
 
 async function runAI(d, opts, out, status) {
+  if (opts.code) {
+    // the site's free AI server: lawyer access code, server-side limits
+    const anon = opts.anonymise ? anonymiser(d) : { hide: s => String(s || ""), show: s => s, count: 0 };
+    status.textContent = "AI ले मस्यौदा लेख्दैछ…";
+    const r = await streamViaServer({ mode: "lawyer", code: opts.code, question: buildUserMessage(d, anon.hide), sources: [] },
+      t => { out.innerHTML = renderAIText(anon.show(t)); });
+    const finalText = anon.show(r.text);
+    out.innerHTML = renderAIText(finalText);
+    return { bad: checkCitations(finalText, d), truncated: r.stop === "max_tokens" };
+  }
   const { default: Anthropic } = await import(SDK_URL);
   const client = new Anthropic({ apiKey: opts.key, dangerouslyAllowBrowser: true });
   const anon = opts.anonymise ? anonymiser(d) : { hide: s => String(s || ""), show: s => s, count: 0 };
@@ -395,14 +406,16 @@ addRoute("draft", /^\/draft$/, async () => {
   };
 
   // ---- AI
-  document.getElementById("mkA").onclick = () => {
+  document.getElementById("mkA").onclick = async () => {
     const x = loadDraft();
     let saved = ""; try { saved = localStorage.getItem(KEYSTORE) || ""; } catch { /* ignore */ }
     const an = anonymiser(x);
+    const cfgUrl = (await siteConfig()).ai_url;
+    let savedCode = ""; try { savedCode = JSON.parse(localStorage.getItem("nct-assistant-v1") || "{}").code || ""; } catch { /* ignore */ }
     const dlg = document.getElementById("aiDlg");
     dlg.innerHTML = `<form method="dialog" class="ai-form">
       <h2>🤖 AI मस्यौदा — पठाउनुअघि पढ्नुहोस्</h2>
-      <p>“पठाउनुहोस्” थिचेपछि तलका विवरण <b>Anthropic (Claude)</b> का सर्भरमा पठाइन्छ:</p>
+      <p>“पठाउनुहोस्” थिचेपछि तलका विवरण AI सेवामा पठाइन्छ (वेबसाइटको निःशुल्क AI वा तपाईंको Anthropic key अनुसार):</p>
       <ul class="small">
         <li>कागजातको किसिम: ${esc(DOC_TYPES[x.type].ne)}</li>
         <li>मुद्दाको विवरण, तथ्य (${toDev(x.facts.length)} अक्षर), प्रश्न, तर्क, माग${x.type === "cross" ? ", साक्षीको विवरण" : ""}</li>
@@ -410,27 +423,31 @@ addRoute("draft", /^\/draft$/, async () => {
       </ul>
       <label class="check"><input type="checkbox" id="aiAnon" checked> पक्ष, विपक्ष र साक्षीका नाम लुकाएर पठाउनुहोस् (${toDev(an.count)} नाम [पक्ष-१] जस्ता संकेतमा बदलिन्छ, फर्केपछि फेरि राखिन्छ)</label>
       <label class="check"><input type="checkbox" id="aiConsent"> यी विवरण बाहिर पठाउन मलाई अनुमति छ (ग्राहकको सहमति/गोपनीयता दायित्व मैले जाँचेको छु)।</label>
-      <label class="fl">तपाईंको Anthropic API key
-        <input type="password" id="aiKey" value="${esc(saved)}" placeholder="sk-ant-…" autocomplete="off"></label>
+      <label class="check"><input type="radio" name="aiMode" value="code" ${cfgUrl ? "checked" : "disabled"}> वेबसाइटको निःशुल्क AI — वकिल पहुँच कोड</label>
+      <input id="aiCode" class="fl-in" placeholder="पहुँच कोड (सञ्चालकबाट)" value="${esc(savedCode)}">
+      <label class="check"><input type="radio" name="aiMode" value="key" ${cfgUrl ? "" : "checked"}> मेरो आफ्नै Anthropic API key (सशुल्क, वैकल्पिक)</label>
+      <input type="password" id="aiKey" class="fl-in" value="${esc(saved)}" placeholder="sk-ant-…" autocomplete="off">
       <label class="check"><input type="checkbox" id="aiRemember" ${saved ? "checked" : ""}> यो कम्प्युटरको ब्राउजरमा key सम्झनुहोस्</label>
-      <p class="small">Key <a href="https://console.anthropic.com/" target="_blank" rel="noopener">console.anthropic.com</a> बाट लिनुहोस्। यो सिधै तपाईंको ब्राउजरबाट Anthropic मा मात्र जान्छ — यो वेबसाइटको कुनै सर्भर छैन। एक मस्यौदाको खर्च सामान्यतया केही अमेरिकी सेन्ट देखि करिब १ डलरसम्म (लम्बाइ अनुसार) तपाईंको Anthropic खाताबाट लाग्छ।</p>
+      <p class="small">निःशुल्क AI दैनिक सीमित छ र नेपाली कानूनी मस्यौदामा कमजोर हुन सक्छ। Anthropic key <a href="https://console.anthropic.com/" target="_blank" rel="noopener">console.anthropic.com</a> बाट (सशुल्क); यो सिधै तपाईंको ब्राउजरबाट Anthropic मा मात्र जान्छ।</p>
       <p class="warn small">⚖️ AI मस्यौदा सहयोगी ड्राफ्ट मात्र हो, कानूनी राय होइन। तपाईंले नछानेका दफा/नजिर उद्धृत भएमा रातो चिन्हले देखाइन्छ। अदालतमा पेश गर्नुअघि प्रत्येक वाक्य जाँच्नुहोस्।</p>
       <div class="draft-actions"><button class="btn ai" value="go" id="aiGo" disabled>पठाउनुहोस्</button><button class="btn ghost" value="cancel">रद्द</button></div>
     </form>`;
     dlg.showModal();
-    const consent = dlg.querySelector("#aiConsent"), keyIn = dlg.querySelector("#aiKey"), go = dlg.querySelector("#aiGo");
-    const upd = () => { go.disabled = !(consent.checked && keyIn.value.trim().startsWith("sk-")); };
-    consent.onchange = upd; keyIn.oninput = upd; upd();
+    const consent = dlg.querySelector("#aiConsent"), keyIn = dlg.querySelector("#aiKey"), codeIn = dlg.querySelector("#aiCode"), go = dlg.querySelector("#aiGo");
+    const modeOf = () => (dlg.querySelector("[name=aiMode]:checked") || {}).value || "key";
+    const upd = () => { go.disabled = !(consent.checked && (modeOf() === "code" ? codeIn.value.trim().length > 4 : keyIn.value.trim().startsWith("sk-"))); };
+    consent.onchange = upd; keyIn.oninput = upd; codeIn.oninput = upd; dlg.querySelectorAll("[name=aiMode]").forEach(r => r.onchange = upd); upd();
     dlg.onclose = async () => {
       if (dlg.returnValue !== "go") return;
-      const key = keyIn.value.trim();
-      try { if (dlg.querySelector("#aiRemember").checked) localStorage.setItem(KEYSTORE, key); else localStorage.removeItem(KEYSTORE); } catch { /* ignore */ }
+      const key = keyIn.value.trim(), useCode = modeOf() === "code", code = codeIn.value.trim();
+      if (useCode) { try { const a = JSON.parse(localStorage.getItem("nct-assistant-v1") || "{}"); a.code = code; localStorage.setItem("nct-assistant-v1", JSON.stringify(a)); } catch { /* ignore */ } }
+      try { if (!useCode && dlg.querySelector("#aiRemember").checked) localStorage.setItem(KEYSTORE, key); else localStorage.removeItem(KEYSTORE); } catch { /* ignore */ }
       warn.innerHTML = "";
-      out.innerHTML = `<p class="loading">Claude सँग जोडिँदै…</p>`;
+      out.innerHTML = `<p class="loading">AI सँग जोडिँदै…</p>`;
       out.scrollIntoView({ behavior: "smooth" });
       document.getElementById("mkA").disabled = true;
       try {
-        const r = await runAI(loadDraft(), { key, anonymise: dlg.querySelector("#aiAnon").checked }, out, status);
+        const r = await runAI(loadDraft(), { key, code: useCode ? code : "", anonymise: dlg.querySelector("#aiAnon").checked }, out, status);
         status.textContent = `AI मस्यौदा तयार${r.truncated ? " (लम्बाइको सीमाले अधूरो — छोटो बनाउन भनेर फेरि प्रयास गर्नुहोस्)" : ""}। यहीँ सम्पादन गर्न सकिन्छ।`;
         warn.innerHTML = r.bad.length
           ? `<p class="warn">⚠️ तपाईंले नछानेका यी सन्दर्भ मस्यौदामा देखिए — हटाउनुहोस् वा मूल स्रोतमा पुष्टि गरेर मात्र राख्नुहोस्: <b>${r.bad.map(esc).join(", ")}</b></p>`

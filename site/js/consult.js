@@ -32,7 +32,7 @@ addRoute("consult", /^\/consult$/, async (m, params) => {
       <div class="chips ex">${EXAMPLES.map(e => `<button class="chip" data-ex="${esc(e)}">${esc(e)}</button>`).join("")}</div>
       <p><button class="btn" id="cgo">सोध्नुहोस्</button> <a class="btn ghost" href="#/lawyers">वकिलसँग कुरा गर्नुहोस् →</a></p>
       ${cfg.ai_url ? "" : `<p class="warn small">AI उत्तर अझै सेटअप भएको छैन — तल सम्बन्धित कानून र नजिर मात्र देखाइन्छ।</p>`}
-      <p class="small">⚖️ यो सामान्य कानूनी जानकारी हो, कानूनी सल्लाह होइन। पक्राउ, अदालतको म्याद वा हिंसाजस्ता गम्भीर विषयमा तुरुन्त वकिलसँग सम्पर्क गर्नुहोस्। खतरामा हुनुहुन्छ भने प्रहरी: <b>१००</b>। तपाईंको प्रश्न उत्तर बनाउन Anthropic (Claude) मा पठाइन्छ।</p>
+      <p class="small">⚖️ यो सामान्य कानूनी जानकारी हो, कानूनी सल्लाह होइन। पक्राउ, अदालतको म्याद वा हिंसाजस्ता गम्भीर विषयमा तुरुन्त वकिलसँग सम्पर्क गर्नुहोस्। खतरामा हुनुहुन्छ भने प्रहरी: <b>१००</b>। तपाईंको प्रश्न उत्तर बनाउन यस वेबसाइटको AI सेवा (Cloudflare Workers AI) मा पठाइन्छ।</p>
     </section>
     <div id="cans"></div>`;
   app.querySelectorAll("[data-ex]").forEach(b => b.onclick = () => setHash("#/consult", { q: b.dataset.ex }));

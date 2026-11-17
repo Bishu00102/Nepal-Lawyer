@@ -12,10 +12,13 @@
 // general-purpose chatbot. Secrets: ANTHROPIC_API_KEY, ADMIN_PASSWORD. KV binding: STORE.
 import Anthropic from "@anthropic-ai/sdk";
 
-const MODEL = "claude-opus-5-5";
+const MODEL = "claude-opus-5-5";                     // used only if ANTHROPIC_API_KEY is set (paid)
+const FREE_MODEL = "@cf/qwen/qwen3-30b-a3b-fp8";      // Cloudflare Workers AI, free daily allowance
+// Free mode keeps prompts small: the model's context is shorter and Neurons are counted per token.
+const FREE_LIMITS = { public: { maxTokens: 1500, maxSources: 12000 }, lawyer: { maxTokens: 3000, maxSources: 20000 } };
 const LIMITS = {
   public: { perIpPerDay: 15, maxTokens: 4000, effort: "medium", maxSources: 40000, maxQuestion: 2000, maxHistory: 0 },
-  lawyer: { perCodePerDay: 40, maxTokens: 16000, effort: "high", maxSources: 90000, maxQuestion: 12000, maxHistory: 30000 },
+  lawyer: { perCodePerDay: 40, maxTokens: 16000, effort: "high", maxSources: 90000, maxQuestion: 24000, maxHistory: 30000 },
 };
 
 const PUBLIC_SYSTEM = `You are "Kanooni Sahayak", the legal-information assistant of a Nepali law website. You help ordinary people in Nepal understand the law that applies to their situation.
@@ -70,9 +73,9 @@ function safeEqual(a, b) {
   return r === 0;
 }
 
-function buildPrompt(body, mode) {
+function buildPrompt(body, mode, free) {
   const L = LIMITS[mode];
-  let budget = L.maxSources;
+  let budget = free ? FREE_LIMITS[mode].maxSources : L.maxSources;
   const src = [];
   for (const s of Array.isArray(body.sources) ? body.sources.slice(0, 40) : []) {
     const id = str(s.id, 8).replace(/[^A-Z0-9]/g, "");
@@ -87,7 +90,8 @@ function buildPrompt(body, mode) {
 }
 
 async function ask(request, env, headers) {
-  if (!env.ANTHROPIC_API_KEY) return json({ error: "AI is not configured on this site yet." }, 503, headers);
+  const free = !env.ANTHROPIC_API_KEY;
+  if (free && !env.AI) return json({ error: "AI is not configured on this site yet." }, 503, headers);
   let body;
   try { body = await request.json(); } catch { return json({ error: "bad json" }, 400, headers); }
   const mode = body.mode === "lawyer" ? "lawyer" : "public";
@@ -118,38 +122,95 @@ async function ask(request, env, headers) {
     }
     while (messages.length && messages[0].role !== "user") messages.shift();
   }
-  messages.push({ role: "user", content: buildPrompt(body, mode) });
+  messages.push({ role: "user", content: buildPrompt(body, mode, free) });
 
-  const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
   const { readable, writable } = new TransformStream();
   const writer = writable.getWriter();
   const enc = new TextEncoder();
   const send = obj => writer.write(enc.encode(`data: ${JSON.stringify(obj)}\n\n`));
+  const system = mode === "lawyer" ? LAWYER_SYSTEM : PUBLIC_SYSTEM;
   (async () => {
     try {
-      const stream = client.beta.messages.stream({
-        model: MODEL,
-        max_tokens: L.maxTokens,
-        output_config: { effort: L.effort },
-        // on a safety-classifier decline the API retries on a fallback model within the same call
-        betas: ["server-side-fallback-2026-07-01"],
-        fallbacks: "default",
-        system: mode === "lawyer" ? LAWYER_SYSTEM : PUBLIC_SYSTEM,
-        messages,
-      });
-      for await (const ev of stream) {
-        if (ev.type === "content_block_delta" && ev.delta.type === "text_delta") await send({ t: ev.delta.text });
-      }
-      const msg = await stream.finalMessage();
-      await send({ done: true, stop: msg.stop_reason });
+      if (free) await runFree(env, system, messages, FREE_LIMITS[mode].maxTokens, send);
+      else await runClaude(env, system, messages, L, send);
     } catch (e) {
       const status = e && e.status;
-      await send({ error: status === 429 ? "AI सेवा व्यस्त छ, केही बेरपछि प्रयास गर्नुहोस्।" : status === 401 ? "AI key मिलेन (साइट सञ्चालकलाई जानकारी दिनुहोस्)।" : "AI उत्तर बन्न सकेन।" });
+      await send({ error: status === 429 ? "AI सेवा व्यस्त छ, केही बेरपछि प्रयास गर्नुहोस्।" : status === 401 ? "AI key मिलेन (साइट सञ्चालकलाई जानकारी दिनुहोस्)।"
+        : free && /neuron|limit|capacity|4006|3036/i.test(String(e && e.message)) ? "आजको निःशुल्क AI सीमा सकियो। भोलि फेरि प्रयास गर्नुहोस्।" : "AI उत्तर बन्न सकेन।" });
     } finally {
       await writer.close();
     }
   })();
   return new Response(readable, { headers: { ...headers, "Content-Type": "text/event-stream; charset=utf-8", "Cache-Control": "no-store" } });
+}
+
+// Paid: Claude via the official SDK (only when the owner adds ANTHROPIC_API_KEY)
+async function runClaude(env, system, messages, L, send) {
+  const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
+  const stream = client.beta.messages.stream({
+    model: MODEL,
+    max_tokens: L.maxTokens,
+    output_config: { effort: L.effort },
+    // on a safety-classifier decline the API retries on a fallback model within the same call
+    betas: ["server-side-fallback-2026-07-01"],
+    fallbacks: "default",
+    system,
+    messages,
+  });
+  for await (const ev of stream) {
+    if (ev.type === "content_block_delta" && ev.delta.type === "text_delta") await send({ t: ev.delta.text });
+  }
+  const msg = await stream.finalMessage();
+  await send({ done: true, stop: msg.stop_reason });
+}
+
+// Free: Cloudflare Workers AI (binding "AI"). On the Workers Free plan, use beyond the daily
+// allowance fails instead of being billed.
+async function runFree(env, system, messages, maxTokens, send) {
+  // "/no_think" turns off Qwen3's long hidden reasoning so the free allowance goes to the answer
+  const msgs = [{ role: "system", content: system }, ...messages];
+  msgs[msgs.length - 1] = { ...msgs[msgs.length - 1], content: msgs[msgs.length - 1].content + "\n\n/no_think" };
+  const stream = await env.AI.run(FREE_MODEL, { messages: msgs, max_tokens: maxTokens, temperature: 0.3, stream: true });
+  const reader = stream.getReader();
+  const dec = new TextDecoder();
+  let buf = "", inThink = false, stop = "end_turn";
+  const emit = async chunk => {
+    // drop any <think>…</think> section the model still produces
+    let out = "";
+    while (chunk) {
+      if (inThink) {
+        const e = chunk.indexOf("</think>");
+        if (e < 0) return;
+        chunk = chunk.slice(e + 8); inThink = false;
+      } else {
+        const b = chunk.indexOf("<think>");
+        if (b < 0) { out += chunk; break; }
+        out += chunk.slice(0, b); chunk = chunk.slice(b + 7); inThink = true;
+      }
+    }
+    if (out) await send({ t: out });
+  };
+  for (;;) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    buf += dec.decode(value, { stream: true });
+    let i;
+    while ((i = buf.indexOf("\n")) >= 0) {
+      const line = buf.slice(0, i).trim();
+      buf = buf.slice(i + 1);
+      if (!line.startsWith("data:")) continue;
+      const data = line.slice(5).trim();
+      if (data === "[DONE]") continue;
+      let ev;
+      try { ev = JSON.parse(data); } catch { continue; }
+      // Workers AI streams either {"response": "..."} or OpenAI-style {"choices":[{"delta":{"content":"..."}}]}
+      const piece = ev.response ?? ev.choices?.[0]?.delta?.content ?? "";
+      if (piece) await emit(piece);
+      const fr = ev.choices?.[0]?.finish_reason;
+      if (fr === "length") stop = "max_tokens";
+    }
+  }
+  await send({ done: true, stop });
 }
 
 async function consult(request, env, headers) {
@@ -244,7 +305,8 @@ export default {
       if (url.pathname === "/health") {
         const used = parseInt((await env.STORE.get(`use:all:${today()}`)) || "0", 10);
         const limit = parseInt(env.DAILY_LIMIT || "200", 10);
-        return json({ ok: true, ai: !!env.ANTHROPIC_API_KEY, remaining_today: Math.max(0, limit - used) }, 200, headers);
+        return json({ ok: true, ai: !!(env.ANTHROPIC_API_KEY || env.AI), provider: env.ANTHROPIC_API_KEY ? "claude" : env.AI ? "free" : "none",
+          remaining_today: Math.max(0, limit - used) }, 200, headers);
       }
       if (url.pathname === "/lawyers" && request.method === "GET") {
         return json({ lawyers: (await env.STORE.get("lawyers", "json")) || [] }, 200, { ...headers, "Cache-Control": "max-age=300" });

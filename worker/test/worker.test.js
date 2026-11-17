@@ -97,3 +97,48 @@ test("other websites cannot call the server", async () => {
   const r = await worker.fetch(req("/ask", { question: "test question" }, "3.3.3.3", "https://evil.example"), env());
   assert.equal(r.status, 403);
 });
+
+// ---- free mode (Cloudflare Workers AI), no Anthropic key ----
+function fakeAI(format) {
+  const calls = [];
+  return {
+    calls,
+    async run(model, input) {
+      calls.push({ model, input });
+      const pieces = ["<think>", "भित्री सोच", "</think>", "निःशुल्क ", "उत्तर [L1]"];
+      const lines = pieces.map(p => format === "openai"
+        ? `data: ${JSON.stringify({ choices: [{ delta: { content: p } }] })}\n\n`
+        : `data: ${JSON.stringify({ response: p })}\n\n`).join("") + "data: [DONE]\n\n";
+      return new Response(lines).body;
+    },
+  };
+}
+const freeEnv = format => { const e = env(); delete e.ANTHROPIC_API_KEY; e.AI = fakeAI(format); return e; };
+
+for (const format of ["classic", "openai"]) {
+  test(`free mode streams the answer and hides <think> (${format} stream format)`, async () => {
+    const e = freeEnv(format);
+    const r = await worker.fetch(req("/ask", { question: "पक्राउ परेमा के हक हुन्छ?", sources: [{ id: "L1", label: "संविधान धारा २०", text: "x".repeat(50000) }] }), e);
+    assert.equal(r.status, 200);
+    const text = await r.text();
+    assert.match(text, /निःशुल्क /);
+    assert.match(text, /उत्तर \[L1\]/);
+    assert.ok(!text.includes("भित्री सोच"), "thinking text must not reach the user");
+    const call = e.AI.calls[0];
+    assert.equal(call.model, "@cf/qwen/qwen3-30b-a3b-fp8");
+    assert.equal(call.input.messages[0].role, "system");
+    assert.match(call.input.messages.at(-1).content, /\/no_think$/);
+    assert.ok(call.input.messages.at(-1).content.length < 14000, "sources are trimmed for the free model");
+  });
+}
+
+test("free mode respects the daily cap too", async () => {
+  const e = freeEnv("classic");
+  for (let i = 0; i < 3; i++) { const ok = await worker.fetch(req("/ask", { question: "प्रश्न " + i + " को उत्तर" }, "5.5.5." + i), e); await ok.text(); }
+  assert.equal((await worker.fetch(req("/ask", { question: "अर्को प्रश्न" }, "6.6.6.6"), e)).status, 429);
+});
+
+test("health reports which AI is active", async () => {
+  assert.equal((await (await worker.fetch(req("/health"), freeEnv("classic"))).json()).provider, "free");
+  assert.equal((await (await worker.fetch(req("/health"), env())).json()).provider, "claude");
+});

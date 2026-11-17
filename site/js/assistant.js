@@ -1,7 +1,7 @@
 "use strict";
 /* AI lawyer assistant: multi-turn research and case preparation for advocates.
-   Uses either the site's AI server (with the lawyer's access code from the owner) or the lawyer's own
-   Anthropic API key. Case facts stay in this browser except when a question is sent. */
+   Uses the site's free AI server (with the lawyer's access code from the owner) or, optionally, the
+   lawyer's own (paid) Anthropic API key. Case facts stay in this browser except when a question is sent. */
 
 const ASSIST_KEY = "nct-assistant-v1";
 const LAWYER_SYSTEM_LOCAL = `You are a legal research and drafting assistant working for a licensed advocate in Nepal, inside a law-research website. The advocate reviews and takes responsibility for everything you produce.
@@ -51,12 +51,12 @@ addRoute("assistant", /^\/assistant$/, async () => {
       </div>
       <div class="panel">
         <h2>AI पहुँच · Access</h2>
-        <label class="check"><input type="radio" name="amode" value="code" ${s.mode === "code" ? "checked" : ""} ${cfg.ai_url ? "" : "disabled"}> वेबसाइटको AI — वकिल पहुँच कोड (सञ्चालकबाट)</label>
+        <label class="check"><input type="radio" name="amode" value="code" ${s.mode === "code" ? "checked" : ""} ${cfg.ai_url ? "" : "disabled"}> वेबसाइटको निःशुल्क AI — वकिल पहुँच कोड (सञ्चालकबाट)</label>
         <input id="acode" class="fl-in" placeholder="पहुँच कोड" value="${esc(s.code)}">
-        <label class="check"><input type="radio" name="amode" value="key" ${s.mode === "key" || !cfg.ai_url ? "checked" : ""}> मेरो आफ्नै Anthropic API key</label>
+        <label class="check"><input type="radio" name="amode" value="key" ${s.mode === "key" || !cfg.ai_url ? "checked" : ""}> मेरो आफ्नै Anthropic API key (सशुल्क, वैकल्पिक)</label>
         <input id="akey" class="fl-in" type="password" placeholder="sk-ant-…" value="${esc(ownKey)}" autocomplete="off">
-        <p class="small">${cfg.ai_url ? "" : "वेबसाइटको AI सर्भर अझै सेटअप भएको छैन — आफ्नै key प्रयोग गर्नुहोस्। "}पहुँच कोड पाउन <a href="#/join">वकिलको रूपमा दर्ता हुनुहोस्</a>।</p>
-        <label class="check"><input type="checkbox" id="aconsent"> मुद्दाको विवरण Anthropic (Claude) मा पठाउन मलाई अनुमति छ (ग्राहकको गोपनीयता दायित्व मैले जाँचेको छु)।</label>
+        <p class="small">${cfg.ai_url ? "निःशुल्क AI ले दैनिक सीमित उत्तर दिन्छ; नेपाली कानूनी भाषामा यसको गुणस्तर सशुल्क मोडेलभन्दा कम हुन सक्छ। " : "वेबसाइटको AI सर्भर अझै सेटअप भएको छैन। "}पहुँच कोड पाउन <a href="#/join">वकिलको रूपमा दर्ता हुनुहोस्</a>।</p>
+        <label class="check"><input type="checkbox" id="aconsent"> मुद्दाको विवरण AI सेवामा पठाउन मलाई अनुमति छ (ग्राहकको गोपनीयता दायित्व मैले जाँचेको छु)।</label>
       </div>
     </div>
     <div class="chips tasks">${TASKS.map(([k, l]) => `<button class="chip" data-task="${k}">${l}</button>`).join("")}</div>
