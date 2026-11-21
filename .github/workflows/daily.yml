@@ -83,4 +83,12 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
-      - uses: actions/deploy-pages@v4
+      # GitHub sometimes can't find the just-uploaded site for a moment ("No artifacts named github-pages").
+      # Try once, wait, then try again, so a short GitHub hiccup doesn't fail the whole update.
+      - id: deploy1
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - if: steps.deploy1.outcome == 'failure'
+        run: sleep 90
+      - if: steps.deploy1.outcome == 'failure'
+        uses: actions/deploy-pages@v4
