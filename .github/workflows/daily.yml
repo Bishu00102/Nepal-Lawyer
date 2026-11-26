@@ -83,4 +83,26 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
-      - uses: actions/deploy-pages@v4
+
+  # Publishing runs as its own job, the way GitHub's Pages examples do: by the time this job starts,
+  # GitHub has registered the uploaded site. (Deploying in the same job often failed with
+  # "No artifacts named github-pages were found".) If it still can't see it, wait and try twice more.
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - id: d1
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - if: steps.d1.outcome == 'failure'
+        run: sleep 60
+      - id: d2
+        if: steps.d1.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - if: steps.d1.outcome == 'failure' && steps.d2.outcome == 'failure'
+        run: sleep 180
+      - id: d3
+        if: steps.d1.outcome == 'failure' && steps.d2.outcome == 'failure'
+        uses: actions/deploy-pages@v4
