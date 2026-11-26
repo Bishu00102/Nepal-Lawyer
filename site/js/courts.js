@@ -50,7 +50,7 @@ function rowObj(r, court) {
 }
 
 /* ---------------- daily view */
-addRoute("day", /^\/(?:day\/([A-Z0-9]+)(?:\/([\d-]+))?)?$/, async (m, params) => {
+addRoute("day", /^\/day(?:\/([A-Z0-9]+)(?:\/([\d-]+))?)?$/, async (m, params) => {
   const md = await meta();
   if (!md.courts.length) { app.innerHTML = `<p class="empty">अहिलेसम्म कुनै डाटा छैन।</p>`; return; }
   const court = (m && m[1]) || "SC";
