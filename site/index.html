@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b2545">
 <title>अदालती नतिजा · Nepal Court Tracker</title>
 <meta name="description" content="सर्वोच्च अदालतको दैनिक पेसी, फैसला र आदेश — दैनिक अद्यावधिक। Daily Supreme Court of Nepal cause lists and results for lawyers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,30 +12,55 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M5 7h14M12 5a1.5 1.5 0 1 0 0-.01M5 7l-3 7a3.5 3.5 0 0 0 6 0L5 7zM19 7l-3 7a3.5 3.5 0 0 0 6 0l-3-7z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h2M14 14h2M8 17h2"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 5h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 5h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-gavel" viewBox="0 0 24 24"><path d="M14 4l6 6M11 7l6 6M12.5 5.5l-5 5 6 6 5-5M10 13l-7 7M3 21h9"/></symbol>
+    <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M6 3h11a3 3 0 0 1 3 3v1h-4M6 3a3 3 0 0 0-3 3v1h3M6 3v15a3 3 0 0 0 3 3h9a3 3 0 0 0 3-3v-1H10v1a3 3 0 0 1-3 3M10 8h6M10 12h6"/></symbol>
+    <symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 21h18M4 18h16M12 3l9 5H3zM6 10v8M10 10v8M14 10v8M18 10v8"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0M10 15l2 3 2-3"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0M16 4.5a3.5 3.5 0 0 1 0 7M18 13.5a6 6 0 0 1 4 6.5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8zM5 2l.6 1.4L7 4l-1.4.6L5 6l-.6-1.4L3 4l1.4-.6z"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M16 3l5 5L9 20l-6 1 1-6zM14 5l5 5M3 21h18"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M8 10.5h5M10.5 8v5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12zM8.5 10.5h7M8.5 13.5h4.5"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6zM8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  </defs>
+</svg>
 <header class="top">
   <div class="wrap top-inner">
     <a class="brand" href="#/">
-      <span class="seal" aria-hidden="true">⚖</span>
+      <span class="seal" aria-hidden="true"><svg class="ic"><use href="#i-scale"/></svg></span>
       <span>
         <strong>अदालती नतिजा</strong>
-        <small>Nepal Court Tracker</small>
+        <small>Nepal Court Tracker · Lawyer's desk</small>
       </span>
     </a>
-    <nav class="tabs" aria-label="Main">
-      <a href="#/consult" data-tab="consult">सल्लाह<span>Ask a question</span></a>
-      <a href="#/lawyers" data-tab="consult-l">वकिल<span>Find a lawyer</span></a>
-      <a href="#/" data-tab="day">दैनिक नतिजा<span>Daily results</span></a>
-      <a href="#/nkp" data-tab="nkp">नजिर<span>Precedents</span></a>
-      <a href="#/judgments" data-tab="judgments">फैसला / आदेश<span>SC orders</span></a>
-      <a href="#/laws" data-tab="laws">कानून<span>Statutes</span></a>
-      <a href="#/constitutions" data-tab="constitution">संविधान<span>Constitutions</span></a>
-      <a href="#/judges" data-tab="judges">न्यायाधीश<span>Judges</span></a>
-      <a href="#/assistant" data-tab="assistant">AI सहायक<span>AI assistant</span></a>
-      <a href="#/draft" data-tab="draft">मस्यौदा <span class="basket-count" hidden></span><span>Drafting</span></a>
-      <a href="#/research" data-tab="research">अनुसन्धान<span>Research</span></a>
-      <a href="#/search" data-tab="search">खोज<span>Search</span></a>
-    </nav>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Dark / light mode" title="Dark / light"><svg class="ic"><use href="#i-moon"/></svg></button>
   </div>
+  <nav class="tabs-bar" aria-label="Main">
+    <div class="wrap tabs">
+      <a href="#/day" data-tab="day"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg><b>दैनिक नतिजा</b><span>Daily results</span></a>
+      <a href="#/nkp" data-tab="nkp"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg><b>नजिर</b><span>Precedents</span></a>
+      <a href="#/judgments" data-tab="judgments"><svg class="ic" aria-hidden="true"><use href="#i-gavel"/></svg><b>फैसला / आदेश</b><span>SC orders</span></a>
+      <a href="#/laws" data-tab="laws"><svg class="ic" aria-hidden="true"><use href="#i-scroll"/></svg><b>कानून</b><span>Statutes</span></a>
+      <a href="#/constitutions" data-tab="constitution"><svg class="ic" aria-hidden="true"><use href="#i-landmark"/></svg><b>संविधान</b><span>Constitutions</span></a>
+      <a href="#/judges" data-tab="judges"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg><b>न्यायाधीश</b><span>Judges</span></a>
+      <a href="#/assistant" data-tab="assistant"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg><b>AI सहायक</b><span>AI assistant</span></a>
+      <a href="#/draft" data-tab="draft"><svg class="ic" aria-hidden="true"><use href="#i-pen"/></svg><b>मस्यौदा <span class="basket-count" hidden></span></b><span>Drafting</span></a>
+      <a href="#/research" data-tab="research"><svg class="ic" aria-hidden="true"><use href="#i-compass"/></svg><b>अनुसन्धान</b><span>Research</span></a>
+      <a href="#/consult" data-tab="consult"><svg class="ic" aria-hidden="true"><use href="#i-chat"/></svg><b>सल्लाह</b><span>Ask a question</span></a>
+      <a href="#/lawyers" data-tab="consult-l"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg><b>वकिल</b><span>Find a lawyer</span></a>
+      <a href="#/search" data-tab="search"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg><b>खोज</b><span>Search</span></a>
+    </div>
+  </nav>
 </header>
 
 <main class="wrap" id="app" aria-live="polite">
@@ -47,6 +73,7 @@
   <p id="updated"></p>
 </footer>
 <script src="js/core.js"></script>
+<script src="js/home.js"></script>
 <script src="js/courts.js"></script>
 <script src="js/judgments.js"></script>
 <script src="js/nkp.js"></script>
@@ -57,6 +84,17 @@
 <script src="js/ai.js"></script>
 <script src="js/consult.js"></script>
 <script src="js/assistant.js"></script>
-<script>boot();</script>
+<script>
+// dark / light toggle, remembered on this device only
+(function () {
+  const root = document.documentElement, btn = document.getElementById("themeBtn");
+  try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
+  const dark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  const paint = () => btn.querySelector("use").setAttribute("href", dark() ? "#i-sun" : "#i-moon");
+  btn.onclick = () => { root.dataset.theme = dark() ? "light" : "dark"; try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {} paint(); };
+  paint();
+})();
+boot();
+</script>
 </body>
 </html>
